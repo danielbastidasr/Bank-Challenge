@@ -1,0 +1,579 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0445424A235378F6007C4D31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04454249235378F6007C4D31 /* AppDelegate.swift */; };
+		0445424C235378F6007C4D31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445424B235378F6007C4D31 /* SceneDelegate.swift */; };
+		04454253235378F6007C4D31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04454251235378F6007C4D31 /* Main.storyboard */; };
+		04454255235378F7007C4D31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04454254235378F7007C4D31 /* Assets.xcassets */; };
+		04454258235378F7007C4D31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04454256235378F7007C4D31 /* LaunchScreen.storyboard */; };
+		04454263235378F7007C4D31 /* Bank_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04454262235378F7007C4D31 /* Bank_ChallengeTests.swift */; };
+		04454292235393E7007C4D31 /* PeopleFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04454291235393E7007C4D31 /* PeopleFeature.framework */; };
+		04454293235393E7007C4D31 /* PeopleFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04454291235393E7007C4D31 /* PeopleFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		044542BA235394B4007C4D31 /* RoomsFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044542B9235394B4007C4D31 /* RoomsFeature.framework */; };
+		044542BB235394B4007C4D31 /* RoomsFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 044542B9235394B4007C4D31 /* RoomsFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		044542BC235394BA007C4D31 /* Pods_Bank_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */; };
+		044542BD235394BA007C4D31 /* Pods_Bank_Challenge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0445425F235378F7007C4D31 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0445423E235378F6007C4D31 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04454245235378F6007C4D31;
+			remoteInfo = "Bank Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04454294235393E7007C4D31 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				044542BB235394B4007C4D31 /* RoomsFeature.framework in Embed Frameworks */,
+				04454293235393E7007C4D31 /* PeopleFeature.framework in Embed Frameworks */,
+				044542BD235394BA007C4D31 /* Pods_Bank_Challenge.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		042BC1EF60224E3863C9B97D /* Pods-Bank Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Bank Challenge/Pods-Bank Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		04454246235378F6007C4D31 /* Bank Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bank Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04454249235378F6007C4D31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0445424B235378F6007C4D31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04454252235378F6007C4D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04454254235378F7007C4D31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04454257235378F7007C4D31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04454259235378F7007C4D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0445425E235378F7007C4D31 /* Bank ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bank ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		04454262235378F7007C4D31 /* Bank_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank_ChallengeTests.swift; sourceTree = "<group>"; };
+		04454264235378F7007C4D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04454291235393E7007C4D31 /* PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		044542B9235394B4007C4D31 /* RoomsFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RoomsFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EF47A23D05336893C2B3EFB /* Pods-Bank Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank Challenge.release.xcconfig"; path = "Target Support Files/Pods-Bank Challenge/Pods-Bank Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04454243235378F6007C4D31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04454292235393E7007C4D31 /* PeopleFeature.framework in Frameworks */,
+				044542BA235394B4007C4D31 /* RoomsFeature.framework in Frameworks */,
+				044542BC235394BA007C4D31 /* Pods_Bank_Challenge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0445425B235378F7007C4D31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0445423D235378F6007C4D31 = {
+			isa = PBXGroup;
+			children = (
+				04454248235378F6007C4D31 /* Bank Challenge */,
+				04454261235378F7007C4D31 /* Bank ChallengeTests */,
+				04454247235378F6007C4D31 /* Products */,
+				DE1024E260A3FE07964BF463 /* Pods */,
+				9D2598F47A34333E3C22D88A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		04454247235378F6007C4D31 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04454246235378F6007C4D31 /* Bank Challenge.app */,
+				0445425E235378F7007C4D31 /* Bank ChallengeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04454248235378F6007C4D31 /* Bank Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				04454249235378F6007C4D31 /* AppDelegate.swift */,
+				0445424B235378F6007C4D31 /* SceneDelegate.swift */,
+				04454251235378F6007C4D31 /* Main.storyboard */,
+				04454254235378F7007C4D31 /* Assets.xcassets */,
+				04454256235378F7007C4D31 /* LaunchScreen.storyboard */,
+				04454259235378F7007C4D31 /* Info.plist */,
+			);
+			path = "Bank Challenge";
+			sourceTree = "<group>";
+		};
+		04454261235378F7007C4D31 /* Bank ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				04454262235378F7007C4D31 /* Bank_ChallengeTests.swift */,
+				04454264235378F7007C4D31 /* Info.plist */,
+			);
+			path = "Bank ChallengeTests";
+			sourceTree = "<group>";
+		};
+		9D2598F47A34333E3C22D88A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				044542B9235394B4007C4D31 /* RoomsFeature.framework */,
+				04454291235393E7007C4D31 /* PeopleFeature.framework */,
+				80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE1024E260A3FE07964BF463 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				042BC1EF60224E3863C9B97D /* Pods-Bank Challenge.debug.xcconfig */,
+				6EF47A23D05336893C2B3EFB /* Pods-Bank Challenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04454245235378F6007C4D31 /* Bank Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04454267235378F7007C4D31 /* Build configuration list for PBXNativeTarget "Bank Challenge" */;
+			buildPhases = (
+				7229EAD4EF305709713159B9 /* [CP] Check Pods Manifest.lock */,
+				04454242235378F6007C4D31 /* Sources */,
+				04454243235378F6007C4D31 /* Frameworks */,
+				04454244235378F6007C4D31 /* Resources */,
+				1C297644E4E2C343A8E900EB /* [CP] Embed Pods Frameworks */,
+				04454294235393E7007C4D31 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bank Challenge";
+			productName = "Bank Challenge";
+			productReference = 04454246235378F6007C4D31 /* Bank Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0445425D235378F7007C4D31 /* Bank ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0445426A235378F7007C4D31 /* Build configuration list for PBXNativeTarget "Bank ChallengeTests" */;
+			buildPhases = (
+				0445425A235378F7007C4D31 /* Sources */,
+				0445425B235378F7007C4D31 /* Frameworks */,
+				0445425C235378F7007C4D31 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04454260235378F7007C4D31 /* PBXTargetDependency */,
+			);
+			name = "Bank ChallengeTests";
+			productName = "Bank ChallengeTests";
+			productReference = 0445425E235378F7007C4D31 /* Bank ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0445423E235378F6007C4D31 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Daniel Bastidas";
+				TargetAttributes = {
+					04454245235378F6007C4D31 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					0445425D235378F7007C4D31 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 04454245235378F6007C4D31;
+					};
+				};
+			};
+			buildConfigurationList = 04454241235378F6007C4D31 /* Build configuration list for PBXProject "Bank Challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0445423D235378F6007C4D31;
+			productRefGroup = 04454247235378F6007C4D31 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04454245235378F6007C4D31 /* Bank Challenge */,
+				0445425D235378F7007C4D31 /* Bank ChallengeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04454244235378F6007C4D31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04454258235378F7007C4D31 /* LaunchScreen.storyboard in Resources */,
+				04454255235378F7007C4D31 /* Assets.xcassets in Resources */,
+				04454253235378F6007C4D31 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0445425C235378F7007C4D31 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C297644E4E2C343A8E900EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bank Challenge/Pods-Bank Challenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bank Challenge/Pods-Bank Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7229EAD4EF305709713159B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bank Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04454242235378F6007C4D31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0445424A235378F6007C4D31 /* AppDelegate.swift in Sources */,
+				0445424C235378F6007C4D31 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0445425A235378F7007C4D31 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04454263235378F7007C4D31 /* Bank_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04454260235378F7007C4D31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04454245235378F6007C4D31 /* Bank Challenge */;
+			targetProxy = 0445425F235378F7007C4D31 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04454251235378F6007C4D31 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04454252235378F6007C4D31 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		04454256235378F7007C4D31 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04454257235378F7007C4D31 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04454265235378F7007C4D31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04454266235378F7007C4D31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04454268235378F7007C4D31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 042BC1EF60224E3863C9B97D /* Pods-Bank Challenge.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9B2M56478;
+				INFOPLIST_FILE = "Bank Challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dabasra.bankchallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04454269235378F7007C4D31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EF47A23D05336893C2B3EFB /* Pods-Bank Challenge.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9B2M56478;
+				INFOPLIST_FILE = "Bank Challenge/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dabasra.bankchallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0445426B235378F7007C4D31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AYT5R2RQFH;
+				INFOPLIST_FILE = "Bank ChallengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dabasra.Bank-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bank Challenge.app/Bank Challenge";
+			};
+			name = Debug;
+		};
+		0445426C235378F7007C4D31 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AYT5R2RQFH;
+				INFOPLIST_FILE = "Bank ChallengeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "dabasra.Bank-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bank Challenge.app/Bank Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04454241235378F6007C4D31 /* Build configuration list for PBXProject "Bank Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04454265235378F7007C4D31 /* Debug */,
+				04454266235378F7007C4D31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04454267235378F7007C4D31 /* Build configuration list for PBXNativeTarget "Bank Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04454268235378F7007C4D31 /* Debug */,
+				04454269235378F7007C4D31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0445426A235378F7007C4D31 /* Build configuration list for PBXNativeTarget "Bank ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0445426B235378F7007C4D31 /* Debug */,
+				0445426C235378F7007C4D31 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0445423E235378F6007C4D31 /* Project object */;
+}

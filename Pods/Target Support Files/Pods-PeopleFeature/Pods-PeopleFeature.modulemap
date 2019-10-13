@@ -1,0 +1,6 @@
+framework module Pods_PeopleFeature {
+  umbrella header "Pods-PeopleFeature-umbrella.h"
+
+  export *
+  module * { export * }
+}
