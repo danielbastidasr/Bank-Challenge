@@ -12,6 +12,8 @@
 		044542882353936C007C4D31 /* PeopleFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = 0445427A2353936B007C4D31 /* PeopleFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		044542C623539693007C4D31 /* PeopleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542C523539693007C4D31 /* PeopleListViewController.swift */; };
 		044542CB235396CD007C4D31 /* PeopleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */; };
+		044542E923551461007C4D31 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542E823551461007C4D31 /* Common.swift */; };
+		044542EB23551627007C4D31 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542EA23551627007C4D31 /* PersonTableViewCell.swift */; };
 		91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		044542872353936C007C4D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044542C523539693007C4D31 /* PeopleListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListViewController.swift; sourceTree = "<group>"; };
 		044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleDetailViewController.swift; sourceTree = "<group>"; };
+		044542E823551461007C4D31 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		044542EA23551627007C4D31 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.release.xcconfig"; sourceTree = "<group>"; };
 		52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCFC815F361BE658F2E0977 /* Pods-PeopleFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +86,7 @@
 		044542792353936B007C4D31 /* PeopleFeature */ = {
 			isa = PBXGroup;
 			children = (
+				044542E72355080B007C4D31 /* common */,
 				044542C723539699007C4D31 /* data */,
 				044542C82353969E007C4D31 /* domain */,
 				044542C9235396A3007C4D31 /* presentation */,
@@ -117,10 +122,83 @@
 		044542C9235396A3007C4D31 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				044542C523539693007C4D31 /* PeopleListViewController.swift */,
-				044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */,
+				044542E6235507C9007C4D31 /* peopledetail */,
+				044542E5235507C2007C4D31 /* people */,
 			);
 			path = presentation;
+			sourceTree = "<group>";
+		};
+		044542E5235507C2007C4D31 /* people */ = {
+			isa = PBXGroup;
+			children = (
+				044542EE23551F29007C4D31 /* model */,
+				044542ED23551F23007C4D31 /* viewmodels */,
+				044542EC23551F1E007C4D31 /* views */,
+			);
+			path = people;
+			sourceTree = "<group>";
+		};
+		044542E6235507C9007C4D31 /* peopledetail */ = {
+			isa = PBXGroup;
+			children = (
+				044542F123551F4E007C4D31 /* model */,
+				044542F023551F47007C4D31 /* viewmodels */,
+				044542EF23551F41007C4D31 /* views */,
+			);
+			path = peopledetail;
+			sourceTree = "<group>";
+		};
+		044542E72355080B007C4D31 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				044542E823551461007C4D31 /* Common.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		044542EC23551F1E007C4D31 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				044542EA23551627007C4D31 /* PersonTableViewCell.swift */,
+				044542C523539693007C4D31 /* PeopleListViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		044542ED23551F23007C4D31 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		044542EE23551F29007C4D31 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		044542EF23551F41007C4D31 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		044542F023551F47007C4D31 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		044542F123551F4E007C4D31 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		852886D6D03DE8E9B83FCA07 /* Pods */ = {
@@ -278,6 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				044542CB235396CD007C4D31 /* PeopleDetailViewController.swift in Sources */,
+				044542E923551461007C4D31 /* Common.swift in Sources */,
+				044542EB23551627007C4D31 /* PersonTableViewCell.swift in Sources */,
 				044542C623539693007C4D31 /* PeopleListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
