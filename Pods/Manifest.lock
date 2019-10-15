@@ -5,22 +5,26 @@ PODS:
   - RxRelay (5.0.0):
     - RxSwift (~> 5)
   - RxSwift (5.0.0)
+  - Swinject (2.7.1)
 
 DEPENDENCIES:
   - RxCocoa
   - RxSwift
+  - Swinject
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - RxCocoa
     - RxRelay
     - RxSwift
+    - Swinject
 
 SPEC CHECKSUMS:
   RxCocoa: fcf32050ac00d801f34a7f71d5e8e7f23026dcd8
   RxRelay: 4f7409406a51a55cd88483f21ed898c234d60f18
   RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: 7a748105b7ab7085421f7fe6e24c15e87fa40d23
+PODFILE CHECKSUM: 633ee70712f5390dfaeab001d5df3bf4fe825bcc
 
 COCOAPODS: 1.6.1

@@ -48,6 +48,7 @@ extension UIView {
 }
 
 protocol ViewProtocol {
+    func resolveDI()
     func setUpViews()
     func bindData()
 }
@@ -63,8 +64,13 @@ class BaseViewController : UIViewController {
         guard let controller = self as? View else {
             return
         }
+        controller.resolveDI()
         controller.setUpViews()
         controller.bindData()
+    }
+    
+    deinit {
+        print("Hello \(self)")
     }
 }
 

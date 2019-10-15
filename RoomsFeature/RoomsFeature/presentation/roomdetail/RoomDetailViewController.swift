@@ -9,8 +9,8 @@
 import UIKit
 
 class RoomDetailViewController: View {
-    
-    var roomViewModel:String!
+
+    var roomViewModel:RoomDetailViewModel?
     
     private let roomName : UILabel = {
         let lbl = UILabel()
@@ -20,6 +20,10 @@ class RoomDetailViewController: View {
         return lbl
     }()
     
+    func resolveDI() {
+        roomViewModel = DIManager.resolveRoomDetailVieModel()
+    }
+    
     func setUpViews() {
         self.view.backgroundColor = .white
         self.view.addSubview(roomName)
@@ -27,6 +31,6 @@ class RoomDetailViewController: View {
     }
     
     func bindData() {
-        roomName.text = roomViewModel
+        roomName.text = roomViewModel?.room?.name
     }
 }

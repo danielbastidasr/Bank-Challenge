@@ -11,6 +11,7 @@ import UIKit
 protocol ViewProtocol {
     func setUpViews()
     func bindData()
+    func resolveDI()
 }
 
 class BaseViewController : UIViewController {
@@ -24,6 +25,7 @@ class BaseViewController : UIViewController {
         guard let controller = self as? View else {
             return
         }
+        controller.resolveDI()
         controller.setUpViews()
         controller.bindData()
     }

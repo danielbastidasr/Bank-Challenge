@@ -6,6 +6,7 @@ workspace 'ChallengeProject'
 def core_pods
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Swinject'
 end
 
 target 'RoomsFeature' do

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0C84CBD998EB82C0173EEBFC22E9D56B"
+               BlueprintIdentifier = "E7ABBE94C27BC458089BA42C5BC3AF13"
                BuildableName = "Pods_Bank_Challenge.framework"
                BlueprintName = "Pods-Bank Challenge"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -12,10 +12,19 @@ import RxSwift
 
 class RoomsListViewController: View {
     
-    let tableView = UITableView()
-    let roomsViewModel = Observable.just(["Hello","World","Testing Here!"])
-    let disposableBag = DisposeBag()
-    let cellNameId = "Cell"
+    //DI
+    var navigator:Navigation?
+    var roomsViewModel:RoomsViewModel?
+    
+    //Private Vars
+    private let tableView = UITableView()
+    private let disposableBag = DisposeBag()
+    private let cellNameId = "Cell"
+    
+    func resolveDI() {
+        navigator = DIManager.resolveNavigation()
+        roomsViewModel = DIManager.resolveRoomsViewModel()
+    }
     
     func setUpViews() {
         view.addSubview(tableView)
@@ -25,7 +34,7 @@ class RoomsListViewController: View {
     }
     
     func bindData(){
-        roomsViewModel.observeOn(MainScheduler.instance)
+        roomsViewModel?.listRooms.observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: RoomTableViewCell.self)){
                (i, model, cell) in
                cell.room = model
@@ -34,21 +43,7 @@ class RoomsListViewController: View {
                
         tableView.rx.modelSelected(String.self)
             .subscribe(onNext: {[unowned self] (room) in
-               self.navigateToDetail(room: room)
+                self.navigator?.navigateToDetail(from: self, paramViewModel: room)
            }).disposed(by: disposableBag)
-    }
-    
-    //MARK:- Navigation
-    
-    private func navigateToDetail(room:String) {
-        let vc = RoomDetailViewController()
-        vc.roomViewModel = room
-        if let navController = self.navigationController {
-            vc.modalPresentationStyle = .fullScreen
-            navController.pushViewController(vc, animated: true)
-        }
-        else{
-            self.present(vc, animated: true, completion: nil)
-        }
     }
 }

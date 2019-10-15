@@ -13,9 +13,17 @@ import RxCocoa
 class PeopleListViewController: View {
     
     let tableView = UITableView()
-    let peopleViewModel = Observable.just(["Hello","World","People"])
+    
     let disposableBag = DisposeBag()
     let cellNameId = "Cell"
+    
+    var peopleViewModel: PeopleViewModel?
+    var navigator:Navigation?
+    
+    func resolveDI() {
+        navigator = DIManager.resolveNavigation()
+        peopleViewModel = DIManager.resolvePeopleViewModel()
+    }
     
     func setUpViews() {
         view.addSubview(tableView)
@@ -25,7 +33,7 @@ class PeopleListViewController: View {
     }
     
     func bindData() {
-        peopleViewModel.observeOn(MainScheduler.instance)
+        peopleViewModel?.peopleList.observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: PersonTableViewCell.self)){
                (i, model, cell) in
                 cell.personViewModel = model
@@ -34,21 +42,7 @@ class PeopleListViewController: View {
                
         tableView.rx.modelSelected(String.self)
             .subscribe(onNext: {[unowned self] (person) in
-               self.navigateToDetail(person: person)
+                self.navigator?.navigateToDetail(from: self, paramViewModel: person)
            }).disposed(by: disposableBag)
-    }
-    
-    //MARK:- Navigation
-    
-    func navigateToDetail(person: String) {
-        let vc = PeopleDetailViewController()
-        vc.personViewModel = person
-        if let navController = self.navigationController {
-            vc.modalPresentationStyle = .fullScreen
-            navController.pushViewController(vc, animated: true)
-        }
-        else{
-            self.present(vc, animated: true, completion: nil)
-        }
     }
 }

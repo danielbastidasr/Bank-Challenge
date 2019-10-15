@@ -10,7 +10,7 @@ import UIKit
 
 class PeopleDetailViewController: View {
     
-    var personViewModel:String!
+    var personViewModel:PersonDetailViewModel?
     
     private let personName : UILabel = {
         let lbl = UILabel()
@@ -19,6 +19,9 @@ class PeopleDetailViewController: View {
         lbl.textAlignment = .center
         return lbl
     }()
+    func resolveDI() {
+        personViewModel = DIManager.resolvePersonDetailViewModel()
+    }
     
     func setUpViews() {
         self.view.backgroundColor = .white
@@ -27,6 +30,6 @@ class PeopleDetailViewController: View {
     }
     
     func bindData() {
-        personName.text = personViewModel
+        personName.text = personViewModel?.person?.name
     }
 }

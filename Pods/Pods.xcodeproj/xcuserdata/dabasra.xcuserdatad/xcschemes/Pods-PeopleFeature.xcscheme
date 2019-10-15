@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64DBD6478E6744BFA9A52BA533F9AF6F"
+               BlueprintIdentifier = "FD0B48F22CE5A249C6AE99CA8D7B2FE1"
                BuildableName = "Pods_PeopleFeature.framework"
                BlueprintName = "Pods-PeopleFeature"
                ReferencedContainer = "container:Pods.xcodeproj">
