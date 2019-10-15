@@ -19,6 +19,7 @@ class PeopleDetailViewController: View {
         lbl.textAlignment = .center
         return lbl
     }()
+    
     func resolveDI() {
         personViewModel = DIManager.resolvePersonDetailViewModel()
     }
@@ -30,6 +31,7 @@ class PeopleDetailViewController: View {
     }
     
     func bindData() {
+        title = "\(personViewModel?.person?.name ?? "Person Detail")"
         personName.text = personViewModel?.person?.name
     }
 }

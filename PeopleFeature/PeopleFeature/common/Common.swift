@@ -69,9 +69,6 @@ class BaseViewController : UIViewController {
         controller.bindData()
     }
     
-    deinit {
-        print("Hello \(self)")
-    }
 }
 
 typealias View = BaseViewController & ViewProtocol

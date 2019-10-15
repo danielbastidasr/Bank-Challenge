@@ -150,8 +150,8 @@
 		044542E6235507C9007C4D31 /* peopledetail */ = {
 			isa = PBXGroup;
 			children = (
-				044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */,
 				0445430023560B14007C4D31 /* PersonDetailParam.swift */,
+				044542CA235396CD007C4D31 /* PeopleDetailViewController.swift */,
 				0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */,
 			);
 			path = peopledetail;

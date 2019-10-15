@@ -155,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				044542F82355EE03007C4D31 /* RoomDetailParam.swift */,
-				044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */,
 				044542C323539679007C4D31 /* RoomDetailViewController.swift */,
+				044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */,
 			);
 			path = roomdetail;
 			sourceTree = "<group>";
@@ -164,8 +164,8 @@
 		044542DE23550620007C4D31 /* rooms */ = {
 			isa = PBXGroup;
 			children = (
-				044542FA23560004007C4D31 /* RoomsViewModel.swift */,
 				044542DF2355064A007C4D31 /* views */,
+				044542FA23560004007C4D31 /* RoomsViewModel.swift */,
 			);
 			path = rooms;
 			sourceTree = "<group>";
