@@ -19,6 +19,7 @@
 		0445430123560B14007C4D31 /* PersonDetailParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430023560B14007C4D31 /* PersonDetailParam.swift */; };
 		0445430323560BA9007C4D31 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */; };
 		0445430523560CA4007C4D31 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430423560CA4007C4D31 /* PeopleViewModel.swift */; };
+		04EF03AF2357A96D00E41760 /* libPeopleFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */; };
 		91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 044542762353936B007C4D31;
 			remoteInfo = PeopleFeature;
+		};
+		04EF03AA2357A93B00E41760 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 04EF039C2357A93A00E41760;
+			remoteInfo = PeopleFeatureData;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -48,6 +56,7 @@
 		0445430023560B14007C4D31 /* PersonDetailParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailParam.swift; sourceTree = "<group>"; };
 		0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		0445430423560CA4007C4D31 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PeopleFeatureData.xcodeproj; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.release.xcconfig"; sourceTree = "<group>"; };
 		52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCFC815F361BE658F2E0977 /* Pods-PeopleFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */,
+				04EF03AF2357A96D00E41760 /* libPeopleFeatureData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +128,7 @@
 		044542C723539699007C4D31 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -174,6 +185,14 @@
 				044542C523539693007C4D31 /* PeopleListViewController.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		04EF03A72357A93A00E41760 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		852886D6D03DE8E9B83FCA07 /* Pods */ = {
@@ -275,6 +294,12 @@
 			mainGroup = 0445426D2353936B007C4D31;
 			productRefGroup = 044542782353936B007C4D31 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 04EF03A72357A93A00E41760 /* Products */;
+					ProjectRef = 04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				044542762353936B007C4D31 /* PeopleFeature */,
@@ -282,6 +307,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPeopleFeatureData.a;
+			remoteRef = 04EF03AA2357A93B00E41760 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		044542752353936B007C4D31 /* Resources */ = {
