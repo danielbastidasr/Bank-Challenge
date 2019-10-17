@@ -20,6 +20,8 @@
 		0445430323560BA9007C4D31 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */; };
 		0445430523560CA4007C4D31 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430423560CA4007C4D31 /* PeopleViewModel.swift */; };
 		04EF03AF2357A96D00E41760 /* libPeopleFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */; };
+		04EF03BC2358AE0500E41760 /* GetPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */; };
+		04EF03BF2358AE9200E41760 /* GetPersonImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */; };
 		91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
 		0445430423560CA4007C4D31 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PeopleFeatureData.xcodeproj; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
+		04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPeopleUseCase.swift; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData/GetPeopleUseCase.swift; sourceTree = SOURCE_ROOT; };
+		04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPersonImageUseCase.swift; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData/GetPersonImageUseCase.swift; sourceTree = SOURCE_ROOT; };
 		3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.release.xcconfig"; sourceTree = "<group>"; };
 		52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCFC815F361BE658F2E0977 /* Pods-PeopleFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		044542C82353969E007C4D31 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */,
+				04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -372,8 +378,10 @@
 				044542FF235604DA007C4D31 /* DI.swift in Sources */,
 				0445430323560BA9007C4D31 /* PersonDetailViewModel.swift in Sources */,
 				044542FD2356048F007C4D31 /* Navigation.swift in Sources */,
+				04EF03BF2358AE9200E41760 /* GetPersonImageUseCase.swift in Sources */,
 				044542EB23551627007C4D31 /* PersonTableViewCell.swift in Sources */,
 				044542C623539693007C4D31 /* PeopleListViewController.swift in Sources */,
+				04EF03BC2358AE0500E41760 /* GetPeopleUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

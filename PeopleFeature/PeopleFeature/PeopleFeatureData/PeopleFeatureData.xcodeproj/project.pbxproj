@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04EF03AE2357A95C00E41760 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03AD2357A95C00E41760 /* Network.swift */; };
+		04EF03B82358A54A00E41760 /* PeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B72358A54900E41760 /* PeopleRepository.swift */; };
+		04EF03BA2358A5AB00E41760 /* PersonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B92358A5AB00E41760 /* PersonEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +26,8 @@
 /* Begin PBXFileReference section */
 		04EF039C2357A93A00E41760 /* libPeopleFeatureData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPeopleFeatureData.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF03AC2357A95C00E41760 /* PeopleFeatureData-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeopleFeatureData-Bridging-Header.h"; sourceTree = "<group>"; };
-		04EF03AD2357A95C00E41760 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		04EF03B72358A54900E41760 /* PeopleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleRepository.swift; sourceTree = "<group>"; };
+		04EF03B92358A5AB00E41760 /* PersonEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 		04EF039E2357A93A00E41760 /* PeopleFeatureData */ = {
 			isa = PBXGroup;
 			children = (
-				04EF03AD2357A95C00E41760 /* Network.swift */,
+				04EF03B72358A54900E41760 /* PeopleRepository.swift */,
+				04EF03B92358A5AB00E41760 /* PersonEntity.swift */,
 				04EF03AC2357A95C00E41760 /* PeopleFeatureData-Bridging-Header.h */,
 			);
 			path = PeopleFeatureData;
@@ -123,7 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EF03AE2357A95C00E41760 /* Network.swift in Sources */,
+				04EF03B82358A54A00E41760 /* PeopleRepository.swift in Sources */,
+				04EF03BA2358A5AB00E41760 /* PersonEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
