@@ -36,10 +36,7 @@ class RoomTableViewCell: UITableViewCell {
      
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
      super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
-        addSubview(roomName)
-        addSubview(roomStatus)
-         
+        
         let basicInformationStack = UIStackView(arrangedSubviews: [roomName,roomStatus])
         basicInformationStack.distribution = .fillEqually
         basicInformationStack.axis = .horizontal

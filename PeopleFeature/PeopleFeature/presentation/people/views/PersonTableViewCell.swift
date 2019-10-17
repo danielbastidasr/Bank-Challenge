@@ -50,19 +50,15 @@ class PersonTableViewCell: UITableViewCell {
         basicInformationStack.distribution = .fillEqually
         basicInformationStack.axis = .vertical
         basicInformationStack.spacing = 20
-        basicInformationStack.addSubview(personName)
-        basicInformationStack.addSubview(jobTitle)
-         
+    
         let personInfo = UIStackView(arrangedSubviews: [personImage, basicInformationStack])
         personInfo.distribution = .fillProportionally
         personInfo.axis = .horizontal
         personInfo.spacing = 20
-        personInfo.addSubview(basicInformationStack)
-        personInfo.addSubview(personImage)
-        
-        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 0, enableInsets: false)
         
         addSubview(personInfo)
+        
+        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 0, enableInsets: false)
         
         personInfo.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0, enableInsets: false)
     }
