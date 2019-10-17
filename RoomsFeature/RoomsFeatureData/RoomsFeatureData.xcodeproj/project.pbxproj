@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04EF03912357A8BC00E41760 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03902357A8BC00E41760 /* Network.swift */; };
+		04EF03912357A8BC00E41760 /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03902357A8BC00E41760 /* RoomsRepository.swift */; };
+		04EF03B32358763100E41760 /* RoomEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B22358763100E41760 /* RoomEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +26,8 @@
 /* Begin PBXFileReference section */
 		04EF037F2357A89D00E41760 /* libRoomsFeatureData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRoomsFeatureData.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		04EF038F2357A8BC00E41760 /* RoomsFeatureData-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RoomsFeatureData-Bridging-Header.h"; sourceTree = "<group>"; };
-		04EF03902357A8BC00E41760 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		04EF03902357A8BC00E41760 /* RoomsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsRepository.swift; sourceTree = "<group>"; };
+		04EF03B22358763100E41760 /* RoomEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 		04EF03812357A89D00E41760 /* RoomsFeatureData */ = {
 			isa = PBXGroup;
 			children = (
-				04EF03902357A8BC00E41760 /* Network.swift */,
+				04EF03902357A8BC00E41760 /* RoomsRepository.swift */,
+				04EF03B22358763100E41760 /* RoomEntity.swift */,
 				04EF038F2357A8BC00E41760 /* RoomsFeatureData-Bridging-Header.h */,
 			);
 			path = RoomsFeatureData;
@@ -123,7 +126,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04EF03912357A8BC00E41760 /* Network.swift in Sources */,
+				04EF03912357A8BC00E41760 /* RoomsRepository.swift in Sources */,
+				04EF03B32358763100E41760 /* RoomEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

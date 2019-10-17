@@ -21,6 +21,7 @@
 		044542F92355EE03007C4D31 /* RoomDetailParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542F82355EE03007C4D31 /* RoomDetailParam.swift */; };
 		044542FB23560004007C4D31 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542FA23560004007C4D31 /* RoomsViewModel.swift */; };
 		04EF03922357A8CF00E41760 /* libRoomsFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */; };
+		04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B42358871100E41760 /* GetRoomsUseCase.swift */; };
 		23EFF3A4F16426888595C8EE /* Pods_RoomsFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		044542F82355EE03007C4D31 /* RoomDetailParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailParam.swift; sourceTree = "<group>"; };
 		044542FA23560004007C4D31 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
 		04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RoomsFeatureData.xcodeproj; path = RoomsFeatureData/RoomsFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
+		04EF03B42358871100E41760 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetRoomsUseCase.swift; path = RoomsFeatureData/RoomsFeatureData/GetRoomsUseCase.swift; sourceTree = SOURCE_ROOT; };
 		61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6268664B542D8239A62C450E /* Pods-RoomsFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeature.debug.xcconfig"; path = "Target Support Files/Pods-RoomsFeature/Pods-RoomsFeature.debug.xcconfig"; sourceTree = "<group>"; };
 		94F788534C913218E54B8221 /* Pods-RoomsFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeature.release.xcconfig"; path = "Target Support Files/Pods-RoomsFeature/Pods-RoomsFeature.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 		044542C223539660007C4D31 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				04EF03B42358871100E41760 /* GetRoomsUseCase.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				044542F32355C2A1007C4D31 /* DI.swift in Sources */,
 				044542D52354976D007C4D31 /* RoomTableViewCell.swift in Sources */,
 				044542F52355CA02007C4D31 /* Navigation.swift in Sources */,
+				04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */,
 				044542C423539679007C4D31 /* RoomDetailViewController.swift in Sources */,
 				044542DC2354D0C8007C4D31 /* View.swift in Sources */,
 				044542BF2353963D007C4D31 /* RoomsListViewController.swift in Sources */,
