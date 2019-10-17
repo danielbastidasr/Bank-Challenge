@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import RoomsFeatureData
 
 struct RoomDetailViewModel{
-    let room:RoomDetailParam?
+    let room:RoomEntity?
 }

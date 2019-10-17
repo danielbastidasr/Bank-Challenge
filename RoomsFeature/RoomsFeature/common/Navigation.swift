@@ -8,13 +8,14 @@
 
 import Foundation
 import UIKit
+import RoomsFeatureData
 
 struct Navigation {
     
-    func navigateToDetail(from:UIViewController, paramViewModel:String) {
+    func navigateToDetail(from:UIViewController, paramViewModel:RoomCellViewModel) {
         
         //DI
-        DIManager.setRoomDetailViewModel(paramViewModel: paramViewModel)
+        DIManager.setRoomDetailViewModel(paramViewModel: paramViewModel.room)
         
         //NAVIGATION
         let vc = RoomDetailViewController()

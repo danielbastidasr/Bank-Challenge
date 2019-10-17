@@ -9,7 +9,7 @@
 import Foundation
 
 public struct RoomEntity:Decodable {
-    let id:String
-    let name:String
-    let isOccupied:Bool
+    public let id:String
+    public let name:String
+    public let isOccupied:Bool
 }

@@ -10,10 +10,10 @@ import UIKit
 
 class RoomTableViewCell: UITableViewCell {
 
-    var room : String? {
+    var roomCellViewModel : RoomCellViewModel? {
         didSet {
-            roomName.text = room
-            roomStatus.text = "Accupied"
+            roomName.text = roomCellViewModel?.roomName
+            roomStatus.text = roomCellViewModel?.roomOccupied
         }
      }
      

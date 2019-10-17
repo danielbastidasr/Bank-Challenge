@@ -8,7 +8,39 @@
 
 import Foundation
 import RxSwift
+import RoomsFeatureData
 
-struct RoomsViewModel{
-    let listRooms = Observable.just(["Hello","World","Testing Here!"])
+class RoomsViewModel{
+    
+    private let useCase:GetRoomsUseCase
+    
+    // OUT
+    var listRooms:PublishSubject<[RoomCellViewModel]> = PublishSubject()
+    var loading:PublishSubject<Bool> = PublishSubject()
+    var error:PublishSubject<Error> = PublishSubject()
+    
+    let disposableBag = DisposeBag()
+    
+    init(useCase:GetRoomsUseCase) {
+        self.useCase = useCase
+    }
+    
+    func fetchData() {
+        useCase.getRoomsResult()
+            .map({ (rooms) -> [RoomCellViewModel] in
+                var roomCells:[RoomCellViewModel] = []
+                
+                rooms.forEach { (room) in
+                    roomCells.append(RoomCellViewModel(room: room))
+                }
+                return roomCells
+            })
+            .subscribe(onNext: { [unowned self](rooms) in
+                self.listRooms.onNext(rooms)
+            }, onError: { (error) in
+                self.error.onNext(error)
+            })
+            .disposed(by: disposableBag)
+    }
+    
 }

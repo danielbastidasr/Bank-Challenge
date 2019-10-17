@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import RoomsFeatureData
 
 struct DependencyManager {
     
@@ -17,13 +18,21 @@ struct DependencyManager {
             return Navigation()
         }
 
-        container.register(RoomsViewModel.self) { r in
-            return RoomsViewModel()
+        // DATA
+        container.register(RoomsRepository.self) { r in
+            return RoomsRepository()
         }
         
-        container.register(RoomDetailViewModel.self) { r in
-            let param = r.resolve(RoomDetailParam.self)
-            return RoomDetailViewModel(room: param)
+        // DOMAIN
+        container.register(GetRoomsUseCase.self) { r in
+            let repository = r.resolve(RoomsRepository.self)!
+            return GetRoomsUseCase(repository: repository)
+        }
+        
+        // VIEWMODELS
+        container.register(RoomsViewModel.self) { r in
+            let useCase = r.resolve(GetRoomsUseCase.self)!
+            return RoomsViewModel(useCase: useCase)
         }
         
     }
@@ -44,9 +53,9 @@ struct DependencyManager {
     
     //MARK:- Register
 
-    func setRoomDetailViewModel(paramViewModel:String)  {
-        DI.register(RoomDetailParam.self) { r in
-            RoomDetailParam(name: paramViewModel)
+    func setRoomDetailViewModel(paramViewModel:RoomEntity)  {
+        DI.register(RoomDetailViewModel.self) { r in
+             RoomDetailViewModel(room: paramViewModel)
         }
     }
 }
