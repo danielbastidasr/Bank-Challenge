@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import PeopleFeatureData
 
 struct DependencyManager {
   
@@ -20,10 +21,21 @@ struct DependencyManager {
         container.register(PeopleViewModel.self) { r in
             return PeopleViewModel()
         }
-    
-        container.register(PersonDetailViewModel.self) { r in
-            let param = r.resolve(PersonDetailParam.self)!
-            return PersonDetailViewModel(person: param)
+        
+        // DATA
+        container.register(PeopleRepository.self) { r in
+            return PeopleRepository()
+        }
+
+        // DOMAIN
+        container.register(GetPeopleUseCase.self) { r in
+            let repository = r.resolve(PeopleRepository.self)!
+            return GetPeopleUseCase(repository: repository)
+        }
+
+        container.register(GetPersonImageUseCase.self) { r in
+            let repository = r.resolve(PeopleRepository.self)!
+            return GetPersonImageUseCase(repository: repository)
         }
         
     }
@@ -44,9 +56,9 @@ struct DependencyManager {
     
     //MARK:- Register
 
-    func setPersonDetailViewModel(paramViewModel:String)  {
-        DI.register(PersonDetailParam.self) { r in
-            PersonDetailParam(name: paramViewModel)
+    func setPersonDetailViewModel(person:PersonEntity)  {
+        DI.register(PersonDetailViewModel.self) { r in
+            return PersonDetailViewModel(person: person)
         }
     }
 }

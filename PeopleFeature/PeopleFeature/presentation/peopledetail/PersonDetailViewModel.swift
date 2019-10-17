@@ -7,7 +7,8 @@
 //
 
 import Foundation
+import PeopleFeatureData
 
 struct PersonDetailViewModel{
-    let person:PersonDetailParam?
+    let person:PersonEntity?
 }

@@ -9,11 +9,21 @@
 import Foundation
 
 public struct PersonEntity:Decodable {
-    let id:String
-    let firstName:String
-    let lastName:String
-    let avatar:String
-    let jobTitle:String
-    let email:String
-    let phone:String
+    public let id:String
+    public let firstName:String
+    public let lastName:String
+    public let avatar:String
+    public let jobTitle:String
+    public let email:String
+    public let phone:String
+    
+    public init(id:String, firstName:String,lastName:String,avatar:String,jobTitle:String,email:String,phone:String) {
+        self.id = id
+        self.firstName = firstName
+        self.lastName = lastName
+        self.avatar = avatar
+        self.jobTitle = jobTitle
+        self.email = email
+        self.phone = phone
+    }
 }

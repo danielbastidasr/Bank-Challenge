@@ -36,13 +36,13 @@ class PeopleListViewController: View {
         peopleViewModel?.peopleList.observeOn(MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: PersonTableViewCell.self)){
                (i, model, cell) in
-                cell.personViewModel = model
+                cell.personCellViewModel = model
             }
            .disposed(by: disposableBag)
                
-        tableView.rx.modelSelected(String.self)
+        tableView.rx.modelSelected(PersonCellViewModel.self)
             .subscribe(onNext: {[unowned self] (person) in
-                self.navigator?.navigateToDetail(from: self, paramViewModel: person)
+                self.navigator?.navigateToDetail(from: self, personCellViewModel: person)
            }).disposed(by: disposableBag)
     }
 }

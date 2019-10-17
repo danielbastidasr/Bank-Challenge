@@ -10,10 +10,10 @@ import UIKit
 
 class PersonTableViewCell: UITableViewCell {
 
-    var personViewModel : String? {
+    var personCellViewModel : PersonCellViewModel? {
         didSet {
-            personName.text = personViewModel
-            jobTitle.text = "Developer"
+            personName.text = personCellViewModel?.fullName
+            jobTitle.text = personCellViewModel?.jobTitle
         }
      }
      

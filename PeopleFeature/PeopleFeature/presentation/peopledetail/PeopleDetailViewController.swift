@@ -31,7 +31,7 @@ class PeopleDetailViewController: View {
     }
     
     func bindData() {
-        title = "\(personViewModel?.person?.name ?? "Person Detail")"
-        personName.text = personViewModel?.person?.name
+        title = "\(personViewModel?.person?.firstName ?? "Person Detail")"
+        personName.text = personViewModel?.person?.firstName
     }
 }

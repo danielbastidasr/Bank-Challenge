@@ -11,9 +11,9 @@ import UIKit
 
 struct Navigation {
     
-    func navigateToDetail(from:UIViewController, paramViewModel:String) {
+    func navigateToDetail(from:UIViewController, personCellViewModel:PersonCellViewModel) {
         
-        DIManager.setPersonDetailViewModel(paramViewModel: paramViewModel)
+        DIManager.setPersonDetailViewModel(person: personCellViewModel.person)
         
         let vc = PeopleDetailViewController()
         if let navController = from.navigationController {
