@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PeopleDetailViewController: View {
+class PersonDetailViewController: View {
     
     var personViewModel:PersonDetailViewModel?
     

@@ -15,7 +15,7 @@ struct Navigation {
         
         DIManager.setPersonDetailViewModel(person: personCellViewModel.person)
         
-        let vc = PeopleDetailViewController()
+        let vc = PersonDetailViewController()
         if let navController = from.navigationController {
             vc.modalPresentationStyle = .fullScreen
             navController.pushViewController(vc, animated: true)

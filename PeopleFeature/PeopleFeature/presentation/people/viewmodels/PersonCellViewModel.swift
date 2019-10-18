@@ -12,21 +12,19 @@ import PeopleFeatureData
 class PersonCellViewModel {
     
     let person:PersonEntity
+    let getPersonImage:GetPersonImageUseCase
     
     //Out
     let fullName:String
     let imageUrl:String
     let jobTitle:String
-    let email:String
-    let phone:String
     
-    init(person:PersonEntity) {
+    init(person:PersonEntity, getPersonImage:GetPersonImageUseCase) {
+        self.getPersonImage = getPersonImage
         self.person = person
         self.fullName = "\(person.firstName) \(person.lastName)"
         self.imageUrl = person.avatar
         self.jobTitle = person.jobTitle
-        self.email = person.email
-        self.phone = person.phone
     }
     
 }

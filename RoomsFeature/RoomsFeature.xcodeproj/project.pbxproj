@@ -168,8 +168,8 @@
 		044542DD235505E8007C4D31 /* roomdetail */ = {
 			isa = PBXGroup;
 			children = (
-				044542C323539679007C4D31 /* RoomDetailViewController.swift */,
-				044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */,
+				04EF03D02359AD1C00E41760 /* viewmodels */,
+				04EF03CF2359AD1200E41760 /* views */,
 			);
 			path = roomdetail;
 			sourceTree = "<group>";
@@ -177,9 +177,8 @@
 		044542DE23550620007C4D31 /* rooms */ = {
 			isa = PBXGroup;
 			children = (
+				04EF03CD2359AD0200E41760 /* viewmodels */,
 				044542DF2355064A007C4D31 /* views */,
-				044542FA23560004007C4D31 /* RoomsViewModel.swift */,
-				04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */,
 			);
 			path = rooms;
 			sourceTree = "<group>";
@@ -199,6 +198,31 @@
 				04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		04EF03CD2359AD0200E41760 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */,
+				044542FA23560004007C4D31 /* RoomsViewModel.swift */,
+			);
+			path = viewmodels;
+			sourceTree = "<group>";
+		};
+		04EF03CF2359AD1200E41760 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				044542C323539679007C4D31 /* RoomDetailViewController.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		04EF03D02359AD1C00E41760 /* viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */,
+			);
+			path = viewmodels;
 			sourceTree = "<group>";
 		};
 		93D8F9AF4DE5383593B5EEED /* Pods */ = {

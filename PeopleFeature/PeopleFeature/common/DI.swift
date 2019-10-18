@@ -17,10 +17,6 @@ struct DependencyManager {
         container.register(Navigation.self) { r in
             return Navigation()
         }
-
-        container.register(PeopleViewModel.self) { r in
-            return PeopleViewModel()
-        }
         
         // DATA
         container.register(PeopleRepository.self) { r in
@@ -38,7 +34,21 @@ struct DependencyManager {
             return GetPersonImageUseCase(repository: repository)
         }
         
+        //VIEW MODELS
+        container.register(PeopleViewModel.self) { r in
+            let getPeopleUseCase = r.resolve(GetPeopleUseCase.self)!
+            let getPersonImageUseCase = r.resolve(GetPersonImageUseCase.self)!
+            return PeopleViewModel(getPeopleUseCase: getPeopleUseCase,getPersonImageUseCase: getPersonImageUseCase)
+        }
     }
+    
+    //MARK:- Register
+
+      func setPersonDetailViewModel(person:PersonEntity)  {
+          DI.register(PersonDetailViewModel.self) { r in
+              return PersonDetailViewModel(person: person)
+          }
+      }
     
     //MARK:- Resolve
     
@@ -52,14 +62,6 @@ struct DependencyManager {
     
     func resolvePersonDetailViewModel() -> PersonDetailViewModel? {
         DI.resolve(PersonDetailViewModel.self)
-    }
-    
-    //MARK:- Register
-
-    func setPersonDetailViewModel(person:PersonEntity)  {
-        DI.register(PersonDetailViewModel.self) { r in
-            return PersonDetailViewModel(person: person)
-        }
     }
 }
 
