@@ -25,28 +25,62 @@ class PeopleListViewController: View {
         peopleViewModel = DIManager.resolvePeopleViewModel()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        peopleViewModel?.fetchData()
-    }
-    
     func setUpViews() {
-        view.addSubview(tableView)
-        tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellNameId)
-        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
-        tableView.accessibilityLabel = "List of People"
+        setUpTableView()
+        setErrorButton()
     }
     
     func bindData() {
-        peopleViewModel?.peopleList.observeOn(MainScheduler.instance)
+        peopleViewModel?.peopleList
+            .observeOn(MainScheduler.instance)
+            .map({[unowned self] people -> [PersonCellViewModel] in
+                if(people.count > 0){
+                    self.errorView.isHidden = true
+                }
+                return people
+            })
             .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: PersonTableViewCell.self)){
                (i, model, cell) in
                 cell.personCellViewModel = model
             }
            .disposed(by: disposableBag)
                
+        peopleViewModel?.error
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[unowned self] _ in
+                self.errorView.isHidden = false
+            }).disposed(by: disposableBag)
+        
         tableView.rx.modelSelected(PersonCellViewModel.self)
             .subscribe(onNext: {[unowned self] (person) in
                 self.navigator?.navigateToDetail(from: self, personCellViewModel: person)
            }).disposed(by: disposableBag)
+        
+        peopleViewModel?.fetchData()
+        
+    }
+    
+    //MARK:- USER ACTIONS
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        peopleViewModel?.fetchData()
+    }
+    
+    @objc func errorPressed(sender: UIButton!) {
+        peopleViewModel?.fetchData()
+    }
+    
+    //MARK:- PRIVATE FUNCTIONS
+    
+    private func setErrorButton(){
+        self.errorButton.addTarget(self, action:#selector(errorPressed), for: .touchUpInside)
+    }
+    
+    private func setUpTableView(){
+        view.addSubview(tableView)
+        tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellNameId)
+        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+        tableView.accessibilityLabel = "List of People"
     }
 }
