@@ -13,19 +13,36 @@ import PeopleFeatureData
 class PeopleViewModel {
     
     //OUT
-    let peopleList = Observable<[PersonCellViewModel]>.just([
-        PersonCellViewModel(person: PersonEntity(id: "", firstName: "HELLOOO", lastName: "HEEEEEE", avatar: "ESSS", jobTitle: "SASDSADAS", email: "", phone: ""), getPersonImage: GetPersonImageUseCase(repository: PeopleRepository())),
-        PersonCellViewModel(person: PersonEntity(id: "", firstName: "HELLOOO2", lastName: "HEEEEEE2222", avatar: "ES222SS", jobTitle: "SASDSA2222DAS", email: "", phone: ""), getPersonImage: GetPersonImageUseCase(repository: PeopleRepository()))
-    ])
+    let peopleList:PublishSubject<[PersonCellViewModel]> = PublishSubject()
+    var loading:PublishSubject<Bool> = PublishSubject()
+    var error:PublishSubject<Error> = PublishSubject()
     
-    let getPeopleUseCase:GetPeopleUseCase
-    let getPersonImageUseCase: GetPersonImageUseCase
+    private let getPeopleUseCase:GetPeopleUseCase
+    private let getPersonImageUseCase: GetPersonImageUseCase
+    private let disposableBag = DisposeBag()
     
     init(getPeopleUseCase:GetPeopleUseCase, getPersonImageUseCase:GetPersonImageUseCase) {
         self.getPeopleUseCase = getPeopleUseCase
         self.getPersonImageUseCase = getPersonImageUseCase
     }
     
+    func fetchData() {
+        getPeopleUseCase.getPeopleResult()
+            .map({ (people) -> [PersonCellViewModel] in
+                var personCells:[PersonCellViewModel] = []
+                people.forEach {[unowned self] (person) in
+                    let pvm = PersonCellViewModel(person: person, getPersonImage: self.getPersonImageUseCase)
+                    personCells.append(pvm)
+                }
+                return personCells
+            })
+            .subscribe(onNext: { [unowned self](people) in
+                self.peopleList.onNext(people)
+            }, onError: {[unowned self] (error) in
+                self.error.onNext(error)
+            })
+            .disposed(by: disposableBag)
+    }    
 }
 
 

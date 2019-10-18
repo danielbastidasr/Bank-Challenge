@@ -12,17 +12,21 @@ import RxCocoa
 
 class PeopleListViewController: View {
     
-    let tableView = UITableView()
-    
-    let disposableBag = DisposeBag()
-    let cellNameId = "Cell"
-    
+    // DI
     var peopleViewModel: PeopleViewModel?
     var navigator:Navigation?
+    
+    private let tableView = UITableView()
+    private let disposableBag = DisposeBag()
+    private let cellNameId = "Cell"
     
     func resolveDI() {
         navigator = DIManager.resolveNavigation()
         peopleViewModel = DIManager.resolvePeopleViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        peopleViewModel?.fetchData()
     }
     
     func setUpViews() {

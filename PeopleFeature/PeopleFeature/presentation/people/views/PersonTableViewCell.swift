@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class PersonTableViewCell: UITableViewCell {
 
@@ -14,9 +16,15 @@ class PersonTableViewCell: UITableViewCell {
         didSet {
             personName.text = personCellViewModel?.fullName
             jobTitle.text = personCellViewModel?.jobTitle
+            personCellViewModel?.image
+                .subscribeOn(MainScheduler.instance)
+                .bind(to: personImage.rx.image)
+            .disposed(by: disposableBag)
+        
+            personCellViewModel?.getImage()
         }
      }
-     
+    
      private let personName : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
@@ -42,14 +50,16 @@ class PersonTableViewCell: UITableViewCell {
         img.image = UIImage()
         return img
     }()
+    
+    private var disposableBag = DisposeBag()
      
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         let basicInformationStack = UIStackView(arrangedSubviews: [personName, jobTitle])
-        basicInformationStack.distribution = .fillEqually
+        basicInformationStack.distribution = .fillProportionally
         basicInformationStack.axis = .vertical
-        basicInformationStack.spacing = 20
+        basicInformationStack.spacing = 10
     
         let personInfo = UIStackView(arrangedSubviews: [personImage, basicInformationStack])
         personInfo.distribution = .fillProportionally
@@ -58,13 +68,22 @@ class PersonTableViewCell: UITableViewCell {
         
         addSubview(personInfo)
         
-        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 60, height: 0, enableInsets: false)
+        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 80, enableInsets: false)
         
         personInfo.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0, enableInsets: false)
     }
      
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposableBag = DisposeBag()
+        personCellViewModel = nil
+        personName.text = nil
+        jobTitle.text = nil
+        personImage.image = nil
     }
 }
 
