@@ -55,9 +55,6 @@ class PeopleListViewController: View {
             .subscribe(onNext: {[unowned self] (person) in
                 self.navigator?.navigateToDetail(from: self, personCellViewModel: person)
            }).disposed(by: disposableBag)
-        
-        peopleViewModel?.fetchData()
-        
     }
     
     //MARK:- USER ACTIONS

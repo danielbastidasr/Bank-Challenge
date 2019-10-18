@@ -8,7 +8,29 @@
 
 import Foundation
 import RoomsFeatureData
+import UIKit
 
-struct RoomDetailViewModel{
-    let room:RoomEntity?
+class RoomDetailViewModel{
+    
+    //OUT
+    let roomDetail:String
+    let roomName:String
+    let textColor:UIColor
+    
+    private let room:RoomEntity?
+    
+    init(room:RoomEntity) {
+        
+        self.room = room
+        self.roomName = room.name
+        
+        if(room.isOccupied){
+            self.roomDetail = "This room is currently Occupied"
+            self.textColor = .systemRed
+        }
+        else{
+            self.roomDetail = "This room is currently Available"
+            self.textColor = .systemGreen
+        }
+    }
 }

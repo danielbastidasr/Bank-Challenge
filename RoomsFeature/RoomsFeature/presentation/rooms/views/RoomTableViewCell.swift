@@ -14,6 +14,7 @@ class RoomTableViewCell: UITableViewCell {
         didSet {
             roomName.text = roomCellViewModel?.roomName
             roomStatus.text = roomCellViewModel?.roomOccupied
+            roomStatus.textColor = roomCellViewModel?.textColor
         }
      }
      
