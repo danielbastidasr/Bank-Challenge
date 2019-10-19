@@ -13,8 +13,8 @@ import RxCocoa
 class PeopleListViewController: View {
     
     // DI
-    var peopleViewModel: PeopleViewModel?
-    var navigator:Navigation?
+    private var peopleViewModel: PeopleViewModel?
+    private var navigator:Navigation?
     
     private let tableView = UITableView()
     private let disposableBag = DisposeBag()

@@ -13,7 +13,7 @@ struct Navigation {
     
     func navigateToDetail(from:UIViewController, personCellViewModel:PersonCellViewModel) {
         
-        DIManager.setPersonDetailViewModel(person: personCellViewModel.person)
+        DIManager.setPersonDetailViewModel(person: personCellViewModel.getPerson())
         
         let vc = PersonDetailViewController()
         if let navController = from.navigationController {

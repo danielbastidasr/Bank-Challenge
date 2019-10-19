@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class PersonDetailViewController: View {
     
@@ -143,9 +145,14 @@ class PersonDetailViewController: View {
     var personViewModel:PersonDetailViewModel?
 
     private let topViewHeight:CGFloat = 300
-    private let bottomViewHeight:CGFloat = 200
+    private let bottomViewHeight:CGFloat = 150
+    private let disposableBag = DisposeBag()
 
-   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        personViewModel?.getImage()
+    }
+    
     func resolveDI() {
         personViewModel = DIManager.resolvePersonDetailViewModel()
     }
@@ -165,5 +172,9 @@ class PersonDetailViewController: View {
         nameLabel.text = personViewModel?.personName
         occupationLabel.text = personViewModel?.occupation
         topContainer.backgroundColor = personViewModel?.favColor
+        personViewModel?.image
+            .subscribeOn(MainScheduler.instance)
+            .bind(to: profileImageView.rx.image)
+        .disposed(by: disposableBag)
     }
 }

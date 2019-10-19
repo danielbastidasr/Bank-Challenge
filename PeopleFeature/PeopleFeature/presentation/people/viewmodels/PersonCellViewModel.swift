@@ -17,7 +17,7 @@ class PersonCellViewModel {
     let jobTitle:String
     let image:PublishSubject<UIImage> = PublishSubject()
     
-    let person:PersonEntity
+    private let person:PersonEntity
     private let imageUrl:String
     private let getPersonImage:GetPersonImageUseCase
     private let disposable = DisposeBag()
@@ -30,11 +30,15 @@ class PersonCellViewModel {
         self.jobTitle = person.jobTitle
     }
     
+    func getPerson() -> PersonEntity {
+        return person
+    }
+    
     func getImage() {
         getPersonImage.getPersonImageResult(imageUrl: imageUrl)
         .subscribe(onNext: { [unowned self](image) in
             self.image.onNext(image)
-        }, onError: { (error) in
+        }, onError: { [unowned self](error) in
             self.image.onNext(UIImage())
         }).disposed(by: disposable)
     }

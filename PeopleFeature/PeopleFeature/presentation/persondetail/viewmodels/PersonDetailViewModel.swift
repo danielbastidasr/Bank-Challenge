@@ -9,10 +9,14 @@
 import Foundation
 import PeopleFeatureData
 import UIKit
+import RxSwift
 
 class PersonDetailViewModel{
 
     private let person:PersonEntity
+    private let disposable = DisposeBag()
+    private let getImageUseCase:GetPersonImageUseCase
+    private let imageUrl:String
     
     //Out
     let personName:String
@@ -20,13 +24,25 @@ class PersonDetailViewModel{
     let email:String
     let telephone:String
     let favColor:UIColor
+    let image:PublishSubject<UIImage> = PublishSubject()
     
-    init(person:PersonEntity) {
+    init(person:PersonEntity, getImageUseCase:GetPersonImageUseCase) {
+        self.imageUrl = person.avatar
+        self.getImageUseCase = getImageUseCase
         self.person = person
         self.personName = "\(person.firstName) \(person.lastName)"
         self.occupation = person.jobTitle
         self.email = person.email
         self.telephone = person.phone
         self.favColor = UIColor(hex: person.favouriteColor)
+    }
+    
+    func getImage() {
+        getImageUseCase.getPersonImageResult(imageUrl: imageUrl)
+        .subscribe(onNext: { [unowned self](image) in
+            self.image.onNext(image)
+        }, onError: { [unowned self](error) in
+            self.image.onNext(UIImage())
+        }).disposed(by: disposable)
     }
 }
