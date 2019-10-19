@@ -9,6 +9,10 @@
 import UIKit
 
 class RoomTableViewCell: UITableViewCell {
+    
+    //MARK:- FONTSIZES
+    let infoSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .subheadline).pointSize
+    let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote).pointSize
 
     var roomCellViewModel : RoomCellViewModel? {
         didSet {
@@ -18,18 +22,19 @@ class RoomTableViewCell: UITableViewCell {
         }
      }
      
-     private let roomName : UILabel = {
+     private lazy var roomName : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.font = UIFont.boldSystemFont(ofSize: infoSize)
         lbl.textAlignment = .left
+        lbl.numberOfLines = 0
         return lbl
      }()
      
-     private let roomStatus : UILabel = {
+     private lazy var roomStatus : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.font = UIFont.systemFont(ofSize: textSize)
         lbl.textAlignment = .right
         lbl.numberOfLines = 0
         return lbl
@@ -38,6 +43,8 @@ class RoomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
      super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
         self.selectionStyle = .none
         
         let basicInformationStack = UIStackView(arrangedSubviews: [roomName,roomStatus])

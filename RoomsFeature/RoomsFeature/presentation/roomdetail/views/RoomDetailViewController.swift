@@ -10,13 +10,15 @@ import UIKit
 
 class RoomDetailViewController: View {
 
-    var roomViewModel:RoomDetailViewModel?
+    private let infoSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).pointSize
+    private var roomViewModel:RoomDetailViewModel?
     
-    private let roomName : UILabel = {
+    private lazy var roomName : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.font = UIFont.boldSystemFont(ofSize: infoSize)
         lbl.textAlignment = .center
+        lbl.numberOfLines = 0
         return lbl
     }()
     

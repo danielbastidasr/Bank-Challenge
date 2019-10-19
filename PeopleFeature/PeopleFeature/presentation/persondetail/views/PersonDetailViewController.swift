@@ -63,7 +63,6 @@ class PersonDetailViewController: View {
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .black
-        label.text = "123123123-123331.2312"
         return label
     }()
     private lazy var phoneStack:UIStackView  = {
@@ -168,8 +167,19 @@ class PersonDetailViewController: View {
     }
     
     func bindData() {
+        // Bind Accessibility
+        
+        view.isAccessibilityElement = true
+        view.accessibilityFrame = view.frame
+        view.accessibilityLabel = "\(personViewModel?.personName ?? "Person") information:"
+        view.accessibilityHint = "Telephone: \(personViewModel?.telephone ?? "Not Available"). \n Email: \(personViewModel?.email ?? "Not Available")"
+        
+        // Bind UI
+        
         title = personViewModel?.personName
         nameLabel.text = personViewModel?.personName
+        phone.text = personViewModel?.telephone
+        email.text = personViewModel?.email
         occupationLabel.text = personViewModel?.occupation
         topContainer.backgroundColor = personViewModel?.favColor
         personViewModel?.image

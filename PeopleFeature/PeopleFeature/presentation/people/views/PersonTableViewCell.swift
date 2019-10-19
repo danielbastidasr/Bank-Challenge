@@ -11,6 +11,10 @@ import RxCocoa
 import RxSwift
 
 class PersonTableViewCell: UITableViewCell {
+    
+    //MARK:- FONTSIZES
+    let infoSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .subheadline).pointSize
+    let textSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .footnote).pointSize
 
     var personCellViewModel : PersonCellViewModel? {
         didSet {
@@ -25,19 +29,20 @@ class PersonTableViewCell: UITableViewCell {
         }
      }
     
-     private let personName : UILabel = {
+     private lazy var personName : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.boldSystemFont(ofSize: 16)
+        lbl.font = UIFont.boldSystemFont(ofSize: infoSize)
         lbl.textAlignment = .left
+        lbl.numberOfLines = 0
         return lbl
      
      }()
      
-     private let jobTitle : UILabel = {
+     private lazy var jobTitle : UILabel = {
         let lbl = UILabel()
         lbl.textColor = .black
-        lbl.font = UIFont.systemFont(ofSize: 16)
+        lbl.font = UIFont.systemFont(ofSize: textSize)
         lbl.textAlignment = .left
         lbl.numberOfLines = 0
         return lbl
@@ -56,13 +61,14 @@ class PersonTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        self.isAccessibilityElement = true
+        self.accessibilityTraits = .button
         self.selectionStyle = .none
         
         let basicInformationStack = UIStackView(arrangedSubviews: [personName, jobTitle])
         basicInformationStack.distribution = .fillProportionally
         basicInformationStack.axis = .vertical
-        basicInformationStack.spacing = 10
-    
+        
         let personInfo = UIStackView(arrangedSubviews: [personImage, basicInformationStack])
         personInfo.distribution = .fillProportionally
         personInfo.axis = .horizontal
@@ -71,6 +77,7 @@ class PersonTableViewCell: UITableViewCell {
         addSubview(personInfo)
         
         personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 0, enableInsets: false)
+        personInfo.heightAnchor.constraint(greaterThanOrEqualToConstant: 80).isActive = true
         
         personInfo.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0, enableInsets: false)
     }
