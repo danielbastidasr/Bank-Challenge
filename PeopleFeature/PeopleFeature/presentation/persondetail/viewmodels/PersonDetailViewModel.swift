@@ -8,7 +8,25 @@
 
 import Foundation
 import PeopleFeatureData
+import UIKit
 
-struct PersonDetailViewModel{
-    let person:PersonEntity?
+class PersonDetailViewModel{
+
+    private let person:PersonEntity
+    
+    //Out
+    let personName:String
+    let occupation:String
+    let email:String
+    let telephone:String
+    let favColor:UIColor
+    
+    init(person:PersonEntity) {
+        self.person = person
+        self.personName = "\(person.firstName) \(person.lastName)"
+        self.occupation = person.jobTitle
+        self.email = person.email
+        self.telephone = person.phone
+        self.favColor = UIColor(hex: person.favouriteColor)
+    }
 }

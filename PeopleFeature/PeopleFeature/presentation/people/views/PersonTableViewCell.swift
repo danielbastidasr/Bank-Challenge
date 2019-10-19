@@ -70,7 +70,7 @@ class PersonTableViewCell: UITableViewCell {
         
         addSubview(personInfo)
         
-        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 80, enableInsets: false)
+        personImage.anchor(top: personInfo.topAnchor, left: personInfo.leftAnchor, bottom: personInfo.bottomAnchor, right: nil, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 80, height: 0, enableInsets: false)
         
         personInfo.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 20, paddingLeft: 20, paddingBottom: 20, paddingRight: 20, width: 0, height: 0, enableInsets: false)
     }

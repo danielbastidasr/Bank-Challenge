@@ -16,4 +16,5 @@ public struct PersonEntity:Decodable {
     public let jobTitle:String
     public let email:String
     public let phone:String
+    public let favouriteColor:String
 }
