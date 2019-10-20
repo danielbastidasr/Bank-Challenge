@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public struct PeopleRepository {
+public class PeopleRepository {
     
     let URLBase = "https://5cc736f4ae1431001472e333.mockapi.io/api/v1/people"
     

@@ -10,7 +10,12 @@ import Foundation
 import RxSwift
 import PeopleFeatureData
 
-class GetPeopleUseCase {
+
+protocol GetPeopleUseCaseProtocol {
+    func getPeopleResult() -> Observable<[PersonEntity]>
+}
+
+class GetPeopleUseCase:GetPeopleUseCaseProtocol {
     
     private let repository:PeopleRepository
     

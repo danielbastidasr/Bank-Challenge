@@ -17,7 +17,6 @@ class PersonDetailViewController: View {
     
     private let profileImageView: UIImageView = {
        let iv = UIImageView()
-       iv.image = #imageLiteral(resourceName: "first")
        iv.contentMode = .scaleAspectFill
        return iv
        

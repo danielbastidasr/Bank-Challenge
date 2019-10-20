@@ -16,11 +16,13 @@ class RoomDetailViewModel{
     let roomDetail:String
     let roomName:String
     let textColor:UIColor
+    let title:String
     
     private let room:RoomEntity?
     
     init(room:RoomEntity) {
         
+        self.title = "\(room.name ) room"
         self.room = room
         self.roomName = room.name
         

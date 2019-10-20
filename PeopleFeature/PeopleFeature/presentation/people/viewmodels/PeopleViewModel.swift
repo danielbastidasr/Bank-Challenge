@@ -17,11 +17,11 @@ class PeopleViewModel {
     var loading:PublishSubject<Bool> = PublishSubject()
     var error:PublishSubject<Error> = PublishSubject()
     
-    private let getPeopleUseCase:GetPeopleUseCase
-    private let getPersonImageUseCase: GetPersonImageUseCase
+    private let getPeopleUseCase:GetPeopleUseCaseProtocol
+    private let getPersonImageUseCase: GetPersonImageUseCaseProtocol
     private let disposableBag = DisposeBag()
     
-    init(getPeopleUseCase:GetPeopleUseCase, getPersonImageUseCase:GetPersonImageUseCase) {
+    init(getPeopleUseCase:GetPeopleUseCaseProtocol, getPersonImageUseCase:GetPersonImageUseCaseProtocol) {
         self.getPeopleUseCase = getPeopleUseCase
         self.getPersonImageUseCase = getPersonImageUseCase
     }

@@ -12,11 +12,25 @@ end
 target 'RoomsFeature' do
   project 'RoomsFeature/RoomsFeature.xcodeproj'
   core_pods
+  
+  target 'RoomsFeatureTests' do
+    inherit! :search_paths
+    core_pods
+    pod 'RxTest'
+  end
+  
 end
 
 target 'PeopleFeature' do
   project 'PeopleFeature/PeopleFeature.xcodeproj'
   core_pods
+  
+  target 'PeopleFeatureTests' do
+    inherit! :search_paths
+    core_pods
+    pod 'RxTest'
+  end
+  
 end
 
 target 'Bank Challenge' do

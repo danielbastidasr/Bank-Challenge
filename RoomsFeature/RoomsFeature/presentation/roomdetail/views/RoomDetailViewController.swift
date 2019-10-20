@@ -33,7 +33,7 @@ class RoomDetailViewController: View {
     }
     
     func bindData() {
-        title = "\(roomViewModel?.roomName ?? "Detailed") room"
+        title = roomViewModel?.title
         roomName.textColor = roomViewModel?.textColor
         roomName.text = roomViewModel?.roomDetail
     }

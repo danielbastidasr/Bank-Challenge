@@ -10,7 +10,11 @@ import Foundation
 import RxSwift
 import PeopleFeatureData
 
-class GetPersonImageUseCase {
+protocol GetPersonImageUseCaseProtocol {
+    func getPersonImageResult(imageUrl:String) -> Observable<UIImage>
+}
+
+class GetPersonImageUseCase:GetPersonImageUseCaseProtocol {
     
     private let repository:PeopleRepository
     

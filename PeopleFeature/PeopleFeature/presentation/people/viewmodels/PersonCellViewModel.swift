@@ -19,10 +19,10 @@ class PersonCellViewModel {
     
     private let person:PersonEntity
     private let imageUrl:String
-    private let getPersonImage:GetPersonImageUseCase
+    private let getPersonImage:GetPersonImageUseCaseProtocol
     private let disposable = DisposeBag()
     
-    init(person:PersonEntity, getPersonImage:GetPersonImageUseCase) {
+    init(person:PersonEntity, getPersonImage:GetPersonImageUseCaseProtocol) {
         self.getPersonImage = getPersonImage
         self.person = person
         self.fullName = "\(person.firstName) \(person.lastName)"
