@@ -12,7 +12,7 @@ import RoomsFeatureData
 
 class RoomsViewModel{
     
-    private let useCase:GetRoomsUseCase
+    private let useCase:GetRoomsUseCaseProtocol
     
     // OUT
     var listRooms:PublishSubject<[RoomCellViewModel]> = PublishSubject()
@@ -21,7 +21,7 @@ class RoomsViewModel{
     
     let disposableBag = DisposeBag()
     
-    init(useCase:GetRoomsUseCase) {
+    init(useCase:GetRoomsUseCaseProtocol) {
         self.useCase = useCase
     }
     

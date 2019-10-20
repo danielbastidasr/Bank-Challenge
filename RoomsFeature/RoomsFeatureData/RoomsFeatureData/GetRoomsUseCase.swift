@@ -10,7 +10,11 @@ import Foundation
 import RoomsFeatureData
 import RxSwift
 
-class GetRoomsUseCase {
+protocol GetRoomsUseCaseProtocol {
+    func getRoomsResult() -> Observable<[RoomEntity]>
+}
+
+class GetRoomsUseCase:GetRoomsUseCaseProtocol {
     
     private let repository:RoomsRepository
     
