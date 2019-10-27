@@ -28,7 +28,7 @@ class RoomsViewModel:ViewModelProtocol<[RoomCellViewModel]>{
                 var roomCells:[RoomCellViewModel] = []
                 
                 rooms.forEach { (room) in
-                    roomCells.append(RoomCellViewModel(room: room))
+                    roomCells.append(RoomCellViewModel(room: room.toPresentation()))
                 }
                 return roomCells
             })

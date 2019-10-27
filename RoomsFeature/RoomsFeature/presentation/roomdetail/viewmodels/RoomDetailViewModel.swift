@@ -18,9 +18,9 @@ class RoomDetailViewModel{
     let textColor:UIColor
     let title:String
     
-    private let room:RoomEntity?
+    private let room:Room?
     
-    init(room:RoomEntity) {
+    init(room:Room) {
         
         self.title = "\(room.name ) room"
         self.room = room

@@ -44,7 +44,7 @@ struct DependencyManager {
     
     //MARK:- Register
 
-      func setPersonDetailViewModel(person:PersonEntity)  {
+      func setPersonDetailViewModel(person:Person)  {
           DI.register(PersonDetailViewModel.self) { r in
               let getImageUseCase = r.resolve(GetPersonImageUseCase.self)!
               return PersonDetailViewModel(person: person, getImageUseCase: getImageUseCase)

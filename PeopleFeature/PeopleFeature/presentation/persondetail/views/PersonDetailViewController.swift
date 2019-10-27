@@ -12,7 +12,6 @@ import RxCocoa
 
 class PersonDetailViewController: View {
     
-
     //MARK:- VIEW: TOP CONTAINER
     
     private let profileImageView: UIImageView = {
@@ -82,7 +81,6 @@ class PersonDetailViewController: View {
         label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .black
-        label.text = "eafdfadfadfa@gadfadafad.com"
         return label
     }()
     private lazy var emailStack:UIStackView  = {
@@ -146,6 +144,8 @@ class PersonDetailViewController: View {
     private let bottomViewHeight:CGFloat = 150
     private let disposableBag = DisposeBag()
 
+    //MARK:- VIEW LIFE CYCLE
+
     override func viewDidLoad() {
         super.viewDidLoad()
         personViewModel?.getImage()
@@ -170,8 +170,8 @@ class PersonDetailViewController: View {
         
         view.isAccessibilityElement = true
         view.accessibilityFrame = view.frame
-        view.accessibilityLabel = "\(personViewModel?.personName ?? "Person") information:"
-        view.accessibilityHint = "Telephone: \(personViewModel?.telephone ?? "Not Available"). \n Email: \(personViewModel?.email ?? "Not Available")"
+        view.accessibilityLabel = personViewModel?.accessibilityLabel
+        view.accessibilityHint = personViewModel?.accessibilityHint
         
         // Bind UI
         

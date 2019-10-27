@@ -19,6 +19,8 @@
 		044542F52355CA02007C4D31 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542F42355CA02007C4D31 /* Navigation.swift */; };
 		044542F72355DDC2007C4D31 /* RoomDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */; };
 		044542FB23560004007C4D31 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542FA23560004007C4D31 /* RoomsViewModel.swift */; };
+		049CCE5123662C9400B9EAED /* EntitiesExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE5023662C9400B9EAED /* EntitiesExt.swift */; };
+		049CCE5523662D4000B9EAED /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE5423662D4000B9EAED /* Room.swift */; };
 		04EF03922357A8CF00E41760 /* libRoomsFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */; };
 		04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B42358871100E41760 /* GetRoomsUseCase.swift */; };
 		04EF03C12358D9FE00E41760 /* RoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */; };
@@ -59,6 +61,8 @@
 		044542F42355CA02007C4D31 /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		044542F62355DDC2007C4D31 /* RoomDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailViewModel.swift; sourceTree = "<group>"; };
 		044542FA23560004007C4D31 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
+		049CCE5023662C9400B9EAED /* EntitiesExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesExt.swift; sourceTree = "<group>"; };
+		049CCE5423662D4000B9EAED /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RoomsFeatureData.xcodeproj; path = RoomsFeatureData/RoomsFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
 		04EF03B42358871100E41760 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetRoomsUseCase.swift; path = RoomsFeatureData/RoomsFeatureData/GetRoomsUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellViewModel.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 		044542C023539643007C4D31 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				049CCE5323662D2D00B9EAED /* model */,
 				044542DE23550620007C4D31 /* rooms */,
 				044542DD235505E8007C4D31 /* roomdetail */,
 			);
@@ -166,6 +171,7 @@
 				044542DB2354D0C8007C4D31 /* View.swift */,
 				044542F22355C2A1007C4D31 /* DI.swift */,
 				044542F42355CA02007C4D31 /* Navigation.swift */,
+				049CCE5023662C9400B9EAED /* EntitiesExt.swift */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -195,6 +201,14 @@
 				044542BE2353963D007C4D31 /* RoomsListViewController.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		049CCE5323662D2D00B9EAED /* model */ = {
+			isa = PBXGroup;
+			children = (
+				049CCE5423662D4000B9EAED /* Room.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		04EF038A2357A89D00E41760 /* Products */ = {
@@ -463,10 +477,12 @@
 				044542F52355CA02007C4D31 /* Navigation.swift in Sources */,
 				04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */,
 				044542C423539679007C4D31 /* RoomDetailViewController.swift in Sources */,
+				049CCE5523662D4000B9EAED /* Room.swift in Sources */,
 				044542DC2354D0C8007C4D31 /* View.swift in Sources */,
 				04EF03C12358D9FE00E41760 /* RoomCellViewModel.swift in Sources */,
 				044542BF2353963D007C4D31 /* RoomsListViewController.swift in Sources */,
 				044542D82354B510007C4D31 /* Extensions.swift in Sources */,
+				049CCE5123662C9400B9EAED /* EntitiesExt.swift in Sources */,
 				044542FB23560004007C4D31 /* RoomsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

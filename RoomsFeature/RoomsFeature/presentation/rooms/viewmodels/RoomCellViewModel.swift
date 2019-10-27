@@ -17,12 +17,12 @@ class RoomCellViewModel {
     var roomOccupied = ""
     var textColor:UIColor = .systemGreen
     
-    let room: RoomEntity
+    private let room: Room
     private let availableColor:UIColor = .systemGreen
     private let accupiedColor:UIColor = .systemRed
     
     
-    init(room:RoomEntity) {
+    init(room:Room) {
         self.room = room
         self.roomName = room.name
         if(room.isOccupied){
@@ -33,6 +33,10 @@ class RoomCellViewModel {
             self.roomOccupied = "Room Available"
             self.textColor = self.availableColor
         }
+    }
+    
+    func getRoom() -> Room {
+        room
     }
     
 }

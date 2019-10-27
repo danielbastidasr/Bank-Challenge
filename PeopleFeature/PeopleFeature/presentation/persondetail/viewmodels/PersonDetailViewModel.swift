@@ -13,7 +13,7 @@ import RxSwift
 
 class PersonDetailViewModel{
 
-    private let person:PersonEntity
+    private let person:Person
     private let disposable = DisposeBag()
     private let getImageUseCase:GetPersonImageUseCase
     private let imageUrl:String
@@ -25,8 +25,10 @@ class PersonDetailViewModel{
     let telephone:String
     let favColor:UIColor
     let image:PublishSubject<UIImage> = PublishSubject()
+    lazy var accessibilityHint = "Telephone: \(telephone). \n Email: \(email)"
+    lazy var accessibilityLabel = "\(personName) information:"
     
-    init(person:PersonEntity, getImageUseCase:GetPersonImageUseCase) {
+    init(person:Person, getImageUseCase:GetPersonImageUseCase) {
         self.imageUrl = person.avatar
         self.getImageUseCase = getImageUseCase
         self.person = person

@@ -15,7 +15,7 @@ struct Navigation {
     func navigateToDetail(from:UIViewController, paramViewModel:RoomCellViewModel) {
         
         //DI
-        DIManager.setRoomDetailViewModel(paramViewModel: paramViewModel.room)
+        DIManager.setRoomDetailViewModel(paramViewModel: paramViewModel.getRoom())
         
         //NAVIGATION
         let vc = RoomDetailViewController()

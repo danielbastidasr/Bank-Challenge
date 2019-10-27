@@ -45,7 +45,7 @@ class PeopleViewModel:ViewModelProtocol<[PersonCellViewModel]> {
             var personCells:[PersonCellViewModel] = []
             
             people.forEach {[unowned self] (person) in
-                let pvm = PersonCellViewModel(person: person, getPersonImage: self.getPersonImageUseCase)
+                let pvm = PersonCellViewModel(person: person.toPresentation(), getPersonImage: self.getPersonImageUseCase)
                 personCells.append(pvm)
             }
             

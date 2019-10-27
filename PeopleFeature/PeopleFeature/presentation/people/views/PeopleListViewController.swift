@@ -27,6 +27,8 @@ class PeopleListViewController: View {
     private let disposableBag = DisposeBag()
     private let cellNameId = "Cell"
     
+    //MARK:- VIEW LIFECYCLE
+    
     func resolveDI() {
         navigator = DIManager.resolveNavigation()
         peopleViewModel = DIManager.resolvePeopleViewModel()

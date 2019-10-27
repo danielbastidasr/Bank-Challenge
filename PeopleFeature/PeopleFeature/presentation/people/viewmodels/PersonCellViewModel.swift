@@ -17,12 +17,12 @@ class PersonCellViewModel {
     let jobTitle:String
     let image:PublishSubject<UIImage> = PublishSubject()
     
-    private let person:PersonEntity
+    private let person:Person
     private let imageUrl:String
     private let getPersonImage:GetPersonImageUseCaseProtocol
     private let disposable = DisposeBag()
     
-    init(person:PersonEntity, getPersonImage:GetPersonImageUseCaseProtocol) {
+    init(person:Person, getPersonImage:GetPersonImageUseCaseProtocol) {
         self.getPersonImage = getPersonImage
         self.person = person
         self.fullName = "\(person.firstName) \(person.lastName)"
@@ -30,7 +30,7 @@ class PersonCellViewModel {
         self.jobTitle = person.jobTitle
     }
     
-    func getPerson() -> PersonEntity {
+    func getPerson() -> Person {
         return person
     }
     

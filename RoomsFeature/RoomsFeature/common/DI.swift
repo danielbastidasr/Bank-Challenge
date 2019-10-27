@@ -53,7 +53,7 @@ struct DependencyManager {
     
     //MARK:- Register
 
-    func setRoomDetailViewModel(paramViewModel:RoomEntity)  {
+    func setRoomDetailViewModel(paramViewModel:Room)  {
         DI.register(RoomDetailViewModel.self) { r in
              RoomDetailViewModel(room: paramViewModel)
         }
