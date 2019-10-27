@@ -10,13 +10,20 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-class RoomsListViewController: View {
-    
+class RoomsListViewController: View{
+
     //DI
     var navigator:Navigation?
     var roomsViewModel:RoomsViewModel?
     
     //Private Vars
+    private let refreshControl: UIRefreshControl = {
+        let refreshView = UIRefreshControl()
+        refreshView.tintColor = .black
+        refreshView.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshView
+    }()
+    
     private let tableView = UITableView()
     private let cellNameId = "Cell"
     private let disposableBag = DisposeBag()
@@ -32,13 +39,23 @@ class RoomsListViewController: View {
     }
     
     func bindData(){
-        roomsViewModel?.listRooms
+        roomsViewModel?.state
             .observeOn(MainScheduler.instance)
-            .map({[unowned self] cells -> [RoomCellViewModel] in
-                if(cells.count > 0 ){
-                    self.errorView.isHidden = true
+            .do(onNext: { [unowned self](state) in
+                if (state.isError){
+                    self.showError()
                 }
-                return cells
+                else if(state.isLoading){
+                    self.refreshControl.beginRefreshing()
+                }
+                else{
+                    self.showData()
+                }
+                
+            })
+            .subscribeOn(CurrentThreadScheduler.instance)
+            .map({state -> [RoomCellViewModel] in
+                return state.data
             })
             .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: RoomTableViewCell.self)){
                (i, model, cell) in
@@ -46,12 +63,6 @@ class RoomsListViewController: View {
             }
            .disposed(by: disposableBag)
         
-        roomsViewModel?.error
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[unowned self] _ in
-                self.errorView.isHidden = false
-            }).disposed(by: disposableBag)
-               
         tableView.rx.modelSelected(RoomCellViewModel.self)
             .subscribe(onNext: {[unowned self] (room) in
                 self.navigator?.navigateToDetail(from: self, paramViewModel: room)
@@ -70,13 +81,33 @@ class RoomsListViewController: View {
         roomsViewModel?.fetchData()
     }
     
+    @objc func refresh(sender:AnyObject) {
+        roomsViewModel?.fetchData()
+    }
+    
     //MARK:- PRIVATE FUNCTIONS
     
     private func setUpTableView(){
+       
+        // Table View
         view.addSubview(tableView)
+        
         tableView.register(RoomTableViewCell.self, forCellReuseIdentifier: cellNameId)
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
         tableView.accessibilityLabel = "List of Rooms"
+        
+        // Refresh
+        tableView.refreshControl = refreshControl
+    }
+    
+    private func showError(){
+        errorView.isHidden = false
+        refreshControl.endRefreshing()
+    }
+    
+    private func showData(){
+        errorView.isHidden = true
+        refreshControl.endRefreshing()
     }
     
     private func setErrorButton(){

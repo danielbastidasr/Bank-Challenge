@@ -10,22 +10,19 @@ import Foundation
 import RxSwift
 import RoomsFeatureData
 
-class RoomsViewModel{
+class RoomsViewModel:ViewModelProtocol<[RoomCellViewModel]>{
     
     private let useCase:GetRoomsUseCaseProtocol
-    
-    // OUT
-    var listRooms:PublishSubject<[RoomCellViewModel]> = PublishSubject()
-    var loading:PublishSubject<Bool> = PublishSubject()
-    var error:PublishSubject<Error> = PublishSubject()
-    
-    let disposableBag = DisposeBag()
+    private let disposableBag = DisposeBag()
     
     init(useCase:GetRoomsUseCaseProtocol) {
         self.useCase = useCase
     }
     
     func fetchData() {
+        self.sendAction(viewAction:
+            .LoadState(dataEmpty: [])
+        )
         useCase.getRoomsResult()
             .map({ (rooms) -> [RoomCellViewModel] in
                 var roomCells:[RoomCellViewModel] = []
@@ -36,9 +33,13 @@ class RoomsViewModel{
                 return roomCells
             })
             .subscribe(onNext: { [unowned self](rooms) in
-                self.listRooms.onNext(rooms)
+                self.sendAction(viewAction:
+                    .DataLoadingSuccess(data: rooms)
+                )
             }, onError: { (error) in
-                self.error.onNext(error)
+                self.sendAction(viewAction:
+                    .DataLoadingFailure(dataInCaseFailed: [])
+                )
             })
             .disposed(by: disposableBag)
     }

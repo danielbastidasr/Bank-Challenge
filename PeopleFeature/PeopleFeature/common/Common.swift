@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 
 extension UIColor {
@@ -81,18 +82,18 @@ protocol ViewProtocol {
 class BaseViewController : UIViewController {
     
     let errorView : UIView = {
-            let view = UIView()
-            view.backgroundColor = .white
-            return view
-        }()
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
         
 
-     let errorButton : UIButton = {
-         let button = UIButton()
-         button.backgroundColor = .black
-         button.setTitle("Please Retry", for: .normal)
-         return button
-     }()
+    let errorButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.setTitle("Please Retry", for: .normal)
+        return button
+    }()
     
     private let errorLabel : UILabel = {
         let label = UILabel()
@@ -134,8 +135,55 @@ class BaseViewController : UIViewController {
         
         errorView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
         errorView.isHidden = true
+        
     }
     
 }
 
+
+
+
 typealias View = BaseViewController & ViewProtocol
+
+class ViewModelProtocol<T> {
+    
+    //OUT
+    let state:PublishSubject<ViewState<T>> = PublishSubject()
+    
+    private final func onReduceState(viewAction: Action<T>) -> ViewState<T>{
+        switch viewAction {
+            case .LoadState(let dataEmpty):
+                return ViewState<T>(isLoading: true, isError: false, data: dataEmpty)
+            
+            case .DataLoadingFailure(let dataInCaseFailed):
+                return ViewState<T>(isLoading: false, isError: true, data: dataInCaseFailed)
+                
+            case .DataLoadingSuccess(let data):
+                return ViewState<T>(isLoading: false, isError: false, data: data)
+        }
+    }
+    
+    final func sendAction(viewAction:Action<T>){
+        state.onNext(
+            onReduceState(viewAction: viewAction)
+        )
+    }
+}
+
+struct ViewState<T>{
+    var isLoading: Bool
+    var isError: Bool
+    var data: T
+    
+    init(isLoading:Bool, isError:Bool, data:T) {
+        self.data = data
+        self.isLoading = isLoading
+        self.isError = isError
+    }
+}
+
+enum Action<T> {
+    case LoadState( dataEmpty: T )
+    case DataLoadingSuccess( data: T)
+    case DataLoadingFailure( dataInCaseFailed: T)
+}

@@ -15,15 +15,18 @@ import RxTest
 
 class PeopleFeatureTests: XCTestCase {
     
+    var disposableBag = DisposeBag()
+    var testScheduler = TestScheduler(initialClock: 0)
+    lazy var testObserver = testScheduler.createObserver(ViewState<[PersonCellViewModel]>.self)
+    
+    
     //MARK:- TEST VIEW MODEL WITH SUCCESS DATA
     func testViewModelWithElements() {
-        let disposableBag = DisposeBag()
-        let testScheduler = TestScheduler(initialClock: 0)
-        let testObserver = testScheduler.createObserver([PersonCellViewModel].self)
+        
         let testInput = [
-            PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
-            PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
-            PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color")
+           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
+           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
+           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color")
         ]
         
         // GIVEN DATA SUCCESS
@@ -32,24 +35,27 @@ class PeopleFeatureTests: XCTestCase {
         let peopleViewModel = PeopleViewModel(getPeopleUseCase: getPeopleUseCase, getPersonImageUseCase: getImageUseCase)
         
         // WHEN CALL FETCH DATA
-        peopleViewModel.peopleList
+        peopleViewModel.state
             .subscribe(testObserver)
             .disposed(by: disposableBag)
         
         peopleViewModel.fetchData()
         
-        // THEN DISPLAY ELEMENTS
-        let output = testObserver.events[0].value.element!
-        XCTAssertEqual(testObserver.events.count, 1)
-        XCTAssertEqual(output.count, testInput.count)
+        // THEN 2 EVENTS TRIGGERED
+        XCTAssertEqual(testObserver.events.count, 2)
         
+        // FIRST EVENT DISPLAY LOADING
+        let outputLoading = testObserver.events[0].value.element!
+        XCTAssert(outputLoading.isLoading)
+        
+        // SECOND EVENT DISPLAY DATA FETCHED
+        let outputData = testObserver.events[1].value.element!
+        XCTAssert(!outputData.isLoading)
+        XCTAssertEqual(outputData.data.count, testInput.count)
     }
     
     //MARK:- TEST VIEW MODEL WITH ERROR DATA
     func testViewModelWithError() {
-        let disposableBag = DisposeBag()
-        let testScheduler = TestScheduler(initialClock: 0)
-        let testObserver = testScheduler.createObserver(Error.self)
         
         // GIVEN DATA WITH ERROR
         let error = ErrorBag.testingError
@@ -58,16 +64,23 @@ class PeopleFeatureTests: XCTestCase {
         let peopleViewModel = PeopleViewModel(getPeopleUseCase: getPeopleUseCase, getPersonImageUseCase: getImageUseCase)
         
         // WHEN CALL FETCH DATA
-        peopleViewModel.error
+        peopleViewModel.state
             .subscribe(testObserver)
             .disposed(by: disposableBag)
         
         peopleViewModel.fetchData()
-        
-        // THEN DISPLAY ERROR VIEW
-        let output = testObserver.events[0].value.element!
-        
-        XCTAssertEqual(output.localizedDescription, error.localizedDescription)
+       
+        // THEN 2 EVENTS TRIGGERED
+        XCTAssertEqual(testObserver.events.count, 2)
+
+        // FIRST EVENT DISPLAY LOADING
+        let outputLoading = testObserver.events[0].value.element!
+        XCTAssert(outputLoading.isLoading)
+
+        // SECOND EVENT DISPLAY DATA FETCHED
+        let outputData = testObserver.events[1].value.element!
+        XCTAssert(!outputData.isLoading)
+        XCTAssert(outputData.isError)
     }
 
 }

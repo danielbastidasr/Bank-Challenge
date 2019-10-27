@@ -16,6 +16,13 @@ class PeopleListViewController: View {
     private var peopleViewModel: PeopleViewModel?
     private var navigator:Navigation?
     
+    //Views
+    private let refreshControl: UIRefreshControl = {
+        let refreshView = UIRefreshControl()
+        refreshView.tintColor = .black
+        refreshView.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshView
+    }()
     private let tableView = UITableView()
     private let disposableBag = DisposeBag()
     private let cellNameId = "Cell"
@@ -31,25 +38,29 @@ class PeopleListViewController: View {
     }
     
     func bindData() {
-        peopleViewModel?.peopleList
+        peopleViewModel?.state
             .observeOn(MainScheduler.instance)
-            .map({[unowned self] people -> [PersonCellViewModel] in
-                if(people.count > 0){
-                    self.errorView.isHidden = true
+            .do(onNext: { [unowned self](state) in
+                if (state.isError){
+                    self.showError()
                 }
-                return people
+                else if(state.isLoading){
+                    self.refreshControl.beginRefreshing()
+                }
+                else{
+                    self.showData()
+                }
             })
-            .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: PersonTableViewCell.self)){
-               (i, model, cell) in
-                cell.personCellViewModel = model
-            }
-           .disposed(by: disposableBag)
-               
-        peopleViewModel?.error
+            .subscribeOn(CurrentThreadScheduler.instance)
+            .map({ (state) -> [PersonCellViewModel] in
+                return state.data
+            })
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[unowned self] _ in
-                self.errorView.isHidden = false
-            }).disposed(by: disposableBag)
+            .bind(to: tableView.rx.items(cellIdentifier: cellNameId, cellType: PersonTableViewCell.self)){
+                (i, model, cell) in
+                 cell.personCellViewModel = model
+             }
+            .disposed(by: disposableBag)
         
         tableView.rx.modelSelected(PersonCellViewModel.self)
             .subscribe(onNext: {[unowned self] (person) in
@@ -68,17 +79,36 @@ class PeopleListViewController: View {
         peopleViewModel?.fetchData()
     }
     
-    //MARK:- PRIVATE FUNCTIONS
-    
-    private func setErrorButton(){
-        self.errorButton.addTarget(self, action:#selector(errorPressed), for: .touchUpInside)
+    @objc func refresh(sender:AnyObject) {
+        peopleViewModel?.fetchData()
     }
     
+    //MARK:- PRIVATE FUNCTIONS
+    
     private func setUpTableView(){
+        
+        // Table View
         view.addSubview(tableView)
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellNameId)
         tableView.estimatedRowHeight = 120
         tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
         tableView.accessibilityLabel = "List of People"
+        
+        // Refresh
+        tableView.refreshControl = refreshControl
+    }
+    
+    private func showError(){
+        errorView.isHidden = false
+        refreshControl.endRefreshing()
+    }
+    
+    private func showData(){
+        errorView.isHidden = true
+        refreshControl.endRefreshing()
+    }
+    
+    private func setErrorButton(){
+        self.errorButton.addTarget(self, action:#selector(errorPressed), for: .touchUpInside)
     }
 }

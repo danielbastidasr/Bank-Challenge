@@ -10,12 +10,7 @@ import Foundation
 import RxSwift
 import PeopleFeatureData
 
-class PeopleViewModel {
-    
-    //OUT
-    let peopleList:PublishSubject<[PersonCellViewModel]> = PublishSubject()
-    var loading:PublishSubject<Bool> = PublishSubject()
-    var error:PublishSubject<Error> = PublishSubject()
+class PeopleViewModel:ViewModelProtocol<[PersonCellViewModel]> {
     
     private let getPeopleUseCase:GetPeopleUseCaseProtocol
     private let getPersonImageUseCase: GetPersonImageUseCaseProtocol
@@ -27,22 +22,36 @@ class PeopleViewModel {
     }
     
     func fetchData() {
-        getPeopleUseCase.getPeopleResult()
-            .map({ (people) -> [PersonCellViewModel] in
-                var personCells:[PersonCellViewModel] = []
-                people.forEach {[unowned self] (person) in
-                    let pvm = PersonCellViewModel(person: person, getPersonImage: self.getPersonImageUseCase)
-                    personCells.append(pvm)
-                }
-                return personCells
-            })
+        self.sendAction(viewAction:
+            .LoadState(dataEmpty: [])
+        )
+        
+        getDataParsed()
             .subscribe(onNext: { [unowned self](people) in
-                self.peopleList.onNext(people)
+                self.sendAction(viewAction:
+                    .DataLoadingSuccess(data: people)
+                )
             }, onError: {[unowned self] (error) in
-                self.error.onNext(error)
+                self.sendAction(viewAction:
+                    .DataLoadingFailure(dataInCaseFailed: [])
+                )
             })
             .disposed(by: disposableBag)
-    }    
+    }
+    
+    private func getDataParsed() -> Observable<[PersonCellViewModel]>{
+        getPeopleUseCase.getPeopleResult()
+        .map({ (people) -> [PersonCellViewModel] in
+            var personCells:[PersonCellViewModel] = []
+            
+            people.forEach {[unowned self] (person) in
+                let pvm = PersonCellViewModel(person: person, getPersonImage: self.getPersonImageUseCase)
+                personCells.append(pvm)
+            }
+            
+            return personCells
+        })
+    }
 }
 
 
