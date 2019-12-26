@@ -10,7 +10,7 @@ import Foundation
 
 public struct RoomsRepository {
     
-    let URLBase = "https://5cc736f4ae1431001472e333.mockapi.io/api/v1/rooms"
+    let URLBase = "https://5dd56c23ce4c300014402e6b.mockapi.io/fake/rooms"
     
     public init(){}
     
