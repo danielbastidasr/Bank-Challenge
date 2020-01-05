@@ -5,9 +5,9 @@ A client would like a directory app to allow staff to:
 
 # 🔌 Data Source
 
-The API that provides the necessary data is located at https://5cc736f4ae1431001472e333.mockapi.io/api/v1 and is RESTful with 2 resources:
+The API that provides the necessary data is located at https://5dd56c23ce4c300014402e6b.mockapi.io/fake/ and is RESTful with 2 resources:
 
-- people 
+- users 
 - rooms
 
 Both support `GET` requests to list the data and also to directly access individual records (the API is read only).
