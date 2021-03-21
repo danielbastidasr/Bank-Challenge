@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		044542BB235394B4007C4D31 /* RoomsFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 044542B9235394B4007C4D31 /* RoomsFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		044542BC235394BA007C4D31 /* Pods_Bank_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */; };
 		044542BD235394BA007C4D31 /* Pods_Bank_Challenge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04EC46192607DA2700000BBC /* MunroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC46182607DA2700000BBC /* MunroViewController.swift */; };
+		04EC46692607E1E200000BBC /* MunroFilterFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 04EC46682607E1E200000BBC /* MunroFilterFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		04454264235378F7007C4D31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04454291235393E7007C4D31 /* PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		044542B9235394B4007C4D31 /* RoomsFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RoomsFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04EC46182607DA2700000BBC /* MunroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MunroViewController.swift; sourceTree = "<group>"; };
 		6EF47A23D05336893C2B3EFB /* Pods-Bank Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bank Challenge.release.xcconfig"; path = "Target Support Files/Pods-Bank Challenge/Pods-Bank Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		80D9A1C8977848475131816D /* Pods_Bank_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bank_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -71,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04454292235393E7007C4D31 /* PeopleFeature.framework in Frameworks */,
+				04EC46692607E1E200000BBC /* MunroFilterFeature in Frameworks */,
 				044542BA235394B4007C4D31 /* RoomsFeature.framework in Frameworks */,
 				044542BC235394BA007C4D31 /* Pods_Bank_Challenge.framework in Frameworks */,
 			);
@@ -109,6 +113,7 @@
 		04454248235378F6007C4D31 /* Bank Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				04EC46182607DA2700000BBC /* MunroViewController.swift */,
 				04454249235378F6007C4D31 /* AppDelegate.swift */,
 				0445424B235378F6007C4D31 /* SceneDelegate.swift */,
 				04454251235378F6007C4D31 /* Main.storyboard */,
@@ -166,6 +171,9 @@
 			dependencies = (
 			);
 			name = "Bank Challenge";
+			packageProductDependencies = (
+				04EC46682607E1E200000BBC /* MunroFilterFeature */,
+			);
 			productName = "Bank Challenge";
 			productReference = 04454246235378F6007C4D31 /* Bank Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -216,6 +224,9 @@
 				Base,
 			);
 			mainGroup = 0445423D235378F6007C4D31;
+			packageReferences = (
+				04EC46672607E1E200000BBC /* XCRemoteSwiftPackageReference "MunroSwiftUIFeature" */,
+			);
 			productRefGroup = 04454247235378F6007C4D31 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0445424A235378F6007C4D31 /* AppDelegate.swift in Sources */,
+				04EC46192607DA2700000BBC /* MunroViewController.swift in Sources */,
 				0445424C235378F6007C4D31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -440,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -565,6 +577,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04EC46672607E1E200000BBC /* XCRemoteSwiftPackageReference "MunroSwiftUIFeature" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielbastidasr/MunroSwiftUIFeature";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04EC46682607E1E200000BBC /* MunroFilterFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04EC46672607E1E200000BBC /* XCRemoteSwiftPackageReference "MunroSwiftUIFeature" */;
+			productName = MunroFilterFeature;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0445423E235378F6007C4D31 /* Project object */;
 }
