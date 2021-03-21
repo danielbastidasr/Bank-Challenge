@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RoomsFeatureData
 
 extension RoomEntity{
     func toPresentation() -> Room {

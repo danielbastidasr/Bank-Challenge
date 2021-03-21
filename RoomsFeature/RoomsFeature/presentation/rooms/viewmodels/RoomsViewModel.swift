@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import RoomsFeatureData
 
 class RoomsViewModel:ViewModelProtocol<[RoomCellViewModel]>{
     

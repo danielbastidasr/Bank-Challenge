@@ -8,8 +8,6 @@
 
 import Foundation
 import RxSwift
-import PeopleFeatureData
-
 
 protocol GetPeopleUseCaseProtocol {
     func getPeopleResult() -> Observable<[PersonEntity]>

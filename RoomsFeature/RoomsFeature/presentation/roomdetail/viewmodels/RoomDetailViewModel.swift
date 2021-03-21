@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RoomsFeatureData
 import UIKit
 
 class RoomDetailViewModel{

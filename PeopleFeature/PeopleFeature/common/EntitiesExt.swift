@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import PeopleFeatureData
-
 
 extension PersonEntity{
     func toPresentation() -> Person {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import PeopleFeatureData
 import UIKit
 import RxSwift
 

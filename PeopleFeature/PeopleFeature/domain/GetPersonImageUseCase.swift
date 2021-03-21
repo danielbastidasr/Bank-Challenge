@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import PeopleFeatureData
 
 protocol GetPersonImageUseCaseProtocol {
     func getPersonImageResult(imageUrl:String) -> Observable<UIImage>
