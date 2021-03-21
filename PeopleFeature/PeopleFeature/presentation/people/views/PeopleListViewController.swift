@@ -42,19 +42,19 @@ class PeopleListViewController: View {
     func bindData() {
         peopleViewModel?.state
             .observeOn(MainScheduler.instance)
-            .do(onNext: { [unowned self](state) in
+            .do(onNext: { [weak self](state) in
                 if (state.isError){
-                    self.showError()
+                    self?.showError()
                 }
                 else if(state.isLoading){
-                    self.refreshControl.beginRefreshing()
+                    self?.refreshControl.beginRefreshing()
                 }
                 else{
-                    self.showData()
+                    self?.showData()
                 }
             })
             .subscribeOn(CurrentThreadScheduler.instance)
-            .map({ (state) -> [PersonCellViewModel] in
+            .map({ state -> [PersonCellViewModel] in
                 return state.data
             })
             .observeOn(MainScheduler.instance)
@@ -65,7 +65,8 @@ class PeopleListViewController: View {
             .disposed(by: disposableBag)
         
         tableView.rx.modelSelected(PersonCellViewModel.self)
-            .subscribe(onNext: {[unowned self] (person) in
+            .subscribe(onNext: {[weak self] (person) in
+                guard let self = self else { return }
                 self.navigator?.navigateToDetail(from: self, personCellViewModel: person)
            }).disposed(by: disposableBag)
     }
@@ -93,7 +94,14 @@ class PeopleListViewController: View {
         view.addSubview(tableView)
         tableView.register(PersonTableViewCell.self, forCellReuseIdentifier: cellNameId)
         tableView.estimatedRowHeight = 120
-        tableView.anchor(top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0, enableInsets: false)
+        tableView.anchor(
+            top: view.topAnchor,
+            left: view.leftAnchor,
+            bottom: view.bottomAnchor,
+            right: view.rightAnchor,
+            paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 0, height: 0,
+            enableInsets: false
+        )
         tableView.accessibilityLabel = "List of People"
         
         // Refresh

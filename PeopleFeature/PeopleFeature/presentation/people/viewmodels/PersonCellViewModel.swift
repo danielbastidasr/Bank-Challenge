@@ -7,19 +7,17 @@
 //
 
 import Foundation
-import PeopleFeatureData
 import RxSwift
 
-class PersonCellViewModel {
-    
+struct  PersonCellViewModel {
     //Out
     let fullName:String
     let jobTitle:String
     let image:PublishSubject<UIImage> = PublishSubject()
     
-    private let person:Person
-    private let imageUrl:String
-    private let getPersonImage:GetPersonImageUseCaseProtocol
+    private let person: Person
+    private let imageUrl: String
+    private let getPersonImage: GetPersonImageUseCaseProtocol
     private let disposable = DisposeBag()
     
     init(person:Person, getPersonImage:GetPersonImageUseCaseProtocol) {
@@ -36,9 +34,9 @@ class PersonCellViewModel {
     
     func getImage() {
         getPersonImage.getPersonImageResult(imageUrl: imageUrl)
-        .subscribe(onNext: { [unowned self](image) in
+        .subscribe(onNext: { image in
             self.image.onNext(image)
-        }, onError: { [unowned self](error) in
+        }, onError: { error in
             self.image.onNext(UIImage())
         }).disposed(by: disposable)
     }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,7 +20,8 @@
 		0445430523560CA4007C4D31 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430423560CA4007C4D31 /* PeopleViewModel.swift */; };
 		049CCE4D2366282300B9EAED /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE4C2366282300B9EAED /* Person.swift */; };
 		049CCE4F23662A4F00B9EAED /* EntitiesExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE4E23662A4F00B9EAED /* EntitiesExt.swift */; };
-		04EF03AF2357A96D00E41760 /* libPeopleFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */; };
+		04EC45F12607731800000BBC /* PersonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC45EF2607731800000BBC /* PersonEntity.swift */; };
+		04EC45F22607731800000BBC /* PeopleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC45F02607731800000BBC /* PeopleRepository.swift */; };
 		04EF03BC2358AE0500E41760 /* GetPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */; };
 		04EF03BF2358AE9200E41760 /* GetPersonImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */; };
 		04EF03C52359082600E41760 /* PersonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03C42359082600E41760 /* PersonCellViewModel.swift */; };
@@ -35,13 +36,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 044542762353936B007C4D31;
 			remoteInfo = PeopleFeature;
-		};
-		04EF03AA2357A93B00E41760 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 04EF039C2357A93A00E41760;
-			remoteInfo = PeopleFeatureData;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,9 +56,10 @@
 		0445430423560CA4007C4D31 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 		049CCE4C2366282300B9EAED /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		049CCE4E23662A4F00B9EAED /* EntitiesExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesExt.swift; sourceTree = "<group>"; };
-		04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PeopleFeatureData.xcodeproj; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
-		04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPeopleUseCase.swift; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData/GetPeopleUseCase.swift; sourceTree = SOURCE_ROOT; };
-		04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPersonImageUseCase.swift; path = PeopleFeature/PeopleFeatureData/PeopleFeatureData/GetPersonImageUseCase.swift; sourceTree = SOURCE_ROOT; };
+		04EC45EF2607731800000BBC /* PersonEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonEntity.swift; sourceTree = "<group>"; };
+		04EC45F02607731800000BBC /* PeopleRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleRepository.swift; sourceTree = "<group>"; };
+		04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPeopleUseCase.swift; path = PeopleFeature/domain/GetPeopleUseCase.swift; sourceTree = SOURCE_ROOT; };
+		04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPersonImageUseCase.swift; path = PeopleFeature/domain/GetPersonImageUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03C42359082600E41760 /* PersonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModel.swift; sourceTree = "<group>"; };
 		14BA470BE573BDF0326E7B0A /* Pods-PeopleFeatureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeatureTests.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */,
-				04EF03AF2357A96D00E41760 /* libPeopleFeatureData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,9 +113,9 @@
 		044542792353936B007C4D31 /* PeopleFeature */ = {
 			isa = PBXGroup;
 			children = (
+				04EC45EB2607730000000BBC /* data */,
+				04EC45F52607733100000BBC /* domain */,
 				044542E72355080B007C4D31 /* common */,
-				044542C723539699007C4D31 /* data */,
-				044542C82353969E007C4D31 /* domain */,
 				044542C9235396A3007C4D31 /* presentation */,
 				0445427A2353936B007C4D31 /* PeopleFeature.h */,
 				0445427B2353936B007C4D31 /* Info.plist */,
@@ -138,27 +132,9 @@
 			path = PeopleFeatureTests;
 			sourceTree = "<group>";
 		};
-		044542C723539699007C4D31 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		044542C82353969E007C4D31 /* domain */ = {
-			isa = PBXGroup;
-			children = (
-				04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */,
-				04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */,
-			);
-			path = domain;
-			sourceTree = "<group>";
-		};
 		044542C9235396A3007C4D31 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				049CCE4A2366276200B9EAED /* model */,
 				044542E5235507C2007C4D31 /* people */,
 				044542E6235507C9007C4D31 /* persondetail */,
 			);
@@ -177,8 +153,8 @@
 		044542E6235507C9007C4D31 /* persondetail */ = {
 			isa = PBXGroup;
 			children = (
-				04EF03CC2359ACE700E41760 /* viewmodels */,
-				04EF03CB2359ACDC00E41760 /* views */,
+				044542CA235396CD007C4D31 /* PersonDetailViewController.swift */,
+				0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */,
 			);
 			path = persondetail;
 			sourceTree = "<group>";
@@ -211,12 +187,23 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		04EF03A72357A93A00E41760 /* Products */ = {
+		04EC45EB2607730000000BBC /* data */ = {
 			isa = PBXGroup;
 			children = (
-				04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */,
+				04EC45F02607731800000BBC /* PeopleRepository.swift */,
+				04EC45EF2607731800000BBC /* PersonEntity.swift */,
 			);
-			name = Products;
+			path = data;
+			sourceTree = "<group>";
+		};
+		04EC45F52607733100000BBC /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				049CCE4A2366276200B9EAED /* model */,
+				04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */,
+				04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */,
+			);
+			path = domain;
 			sourceTree = "<group>";
 		};
 		04EF03C92359ACC600E41760 /* viewmodels */ = {
@@ -224,22 +211,6 @@
 			children = (
 				04EF03C42359082600E41760 /* PersonCellViewModel.swift */,
 				0445430423560CA4007C4D31 /* PeopleViewModel.swift */,
-			);
-			path = viewmodels;
-			sourceTree = "<group>";
-		};
-		04EF03CB2359ACDC00E41760 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				044542CA235396CD007C4D31 /* PersonDetailViewController.swift */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		04EF03CC2359ACE700E41760 /* viewmodels */ = {
-			isa = PBXGroup;
-			children = (
-				0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */,
 			);
 			path = viewmodels;
 			sourceTree = "<group>";
@@ -348,12 +319,6 @@
 			mainGroup = 0445426D2353936B007C4D31;
 			productRefGroup = 044542782353936B007C4D31 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 04EF03A72357A93A00E41760 /* Products */;
-					ProjectRef = 04EF03A62357A93A00E41760 /* PeopleFeatureData.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				044542762353936B007C4D31 /* PeopleFeature */,
@@ -361,16 +326,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		04EF03AB2357A93B00E41760 /* libPeopleFeatureData.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libPeopleFeatureData.a;
-			remoteRef = 04EF03AA2357A93B00E41760 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		044542752353936B007C4D31 /* Resources */ = {
@@ -396,24 +351,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -476,7 +418,9 @@
 				044542E923551461007C4D31 /* Common.swift in Sources */,
 				044542FF235604DA007C4D31 /* DI.swift in Sources */,
 				049CCE4F23662A4F00B9EAED /* EntitiesExt.swift in Sources */,
+				04EC45F12607731800000BBC /* PersonEntity.swift in Sources */,
 				0445430323560BA9007C4D31 /* PersonDetailViewModel.swift in Sources */,
+				04EC45F22607731800000BBC /* PeopleRepository.swift in Sources */,
 				044542FD2356048F007C4D31 /* Navigation.swift in Sources */,
 				049CCE4D2366282300B9EAED /* Person.swift in Sources */,
 				04EF03C52359082600E41760 /* PersonCellViewModel.swift in Sources */,

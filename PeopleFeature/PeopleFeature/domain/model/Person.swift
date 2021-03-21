@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Person {
+public struct Person {
     let id:String
     let firstName:String
     let lastName:String

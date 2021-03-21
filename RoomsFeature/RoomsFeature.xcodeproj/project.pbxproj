@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,7 +21,8 @@
 		044542FB23560004007C4D31 /* RoomsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542FA23560004007C4D31 /* RoomsViewModel.swift */; };
 		049CCE5123662C9400B9EAED /* EntitiesExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE5023662C9400B9EAED /* EntitiesExt.swift */; };
 		049CCE5523662D4000B9EAED /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE5423662D4000B9EAED /* Room.swift */; };
-		04EF03922357A8CF00E41760 /* libRoomsFeatureData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */; };
+		04EC45D0260770B900000BBC /* RoomEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC45CD260770B900000BBC /* RoomEntity.swift */; };
+		04EC45D1260770B900000BBC /* RoomsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC45CF260770B900000BBC /* RoomsRepository.swift */; };
 		04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B42358871100E41760 /* GetRoomsUseCase.swift */; };
 		04EF03C12358D9FE00E41760 /* RoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */; };
 		23EFF3A4F16426888595C8EE /* Pods_RoomsFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */; };
@@ -35,13 +36,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0445429E23539440007C4D31;
 			remoteInfo = RoomsFeature;
-		};
-		04EF038D2357A89E00E41760 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 04EF037F2357A89D00E41760;
-			remoteInfo = RoomsFeatureData;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -63,8 +57,9 @@
 		044542FA23560004007C4D31 /* RoomsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsViewModel.swift; sourceTree = "<group>"; };
 		049CCE5023662C9400B9EAED /* EntitiesExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesExt.swift; sourceTree = "<group>"; };
 		049CCE5423662D4000B9EAED /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RoomsFeatureData.xcodeproj; path = RoomsFeatureData/RoomsFeatureData.xcodeproj; sourceTree = SOURCE_ROOT; };
-		04EF03B42358871100E41760 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetRoomsUseCase.swift; path = RoomsFeatureData/RoomsFeatureData/GetRoomsUseCase.swift; sourceTree = SOURCE_ROOT; };
+		04EC45CD260770B900000BBC /* RoomEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomEntity.swift; path = RoomsFeature/data/RoomEntity.swift; sourceTree = SOURCE_ROOT; };
+		04EC45CF260770B900000BBC /* RoomsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomsRepository.swift; path = RoomsFeature/data/RoomsRepository.swift; sourceTree = SOURCE_ROOT; };
+		04EF03B42358871100E41760 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetRoomsUseCase.swift; path = RoomsFeature/domain/GetRoomsUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellViewModel.swift; sourceTree = "<group>"; };
 		4C99177016D8822BB71C7A5D /* Pods_RoomsFeatureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeatureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +75,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				23EFF3A4F16426888595C8EE /* Pods_RoomsFeature.framework in Frameworks */,
-				04EF03922357A8CF00E41760 /* libRoomsFeatureData.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,8 +113,8 @@
 		044542A123539440007C4D31 /* RoomsFeature */ = {
 			isa = PBXGroup;
 			children = (
+				04EC45E82607722E00000BBC /* data */,
 				044542D62354B502007C4D31 /* common */,
-				044542C12353964F007C4D31 /* data */,
 				044542C223539660007C4D31 /* domain */,
 				044542C023539643007C4D31 /* presentation */,
 				044542A223539440007C4D31 /* RoomsFeature.h */,
@@ -141,25 +135,17 @@
 		044542C023539643007C4D31 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				049CCE5323662D2D00B9EAED /* model */,
 				044542DE23550620007C4D31 /* rooms */,
 				044542DD235505E8007C4D31 /* roomdetail */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
 		};
-		044542C12353964F007C4D31 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
 		044542C223539660007C4D31 /* domain */ = {
 			isa = PBXGroup;
 			children = (
 				04EF03B42358871100E41760 /* GetRoomsUseCase.swift */,
+				049CCE5323662D2D00B9EAED /* model */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -211,12 +197,13 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		04EF038A2357A89D00E41760 /* Products */ = {
+		04EC45E82607722E00000BBC /* data */ = {
 			isa = PBXGroup;
 			children = (
-				04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */,
+				04EC45CF260770B900000BBC /* RoomsRepository.swift */,
+				04EC45CD260770B900000BBC /* RoomEntity.swift */,
 			);
-			name = Products;
+			path = data;
 			sourceTree = "<group>";
 		};
 		04EF03CD2359AD0200E41760 /* viewmodels */ = {
@@ -348,12 +335,6 @@
 			mainGroup = 0445429523539440007C4D31;
 			productRefGroup = 044542A023539440007C4D31 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 04EF038A2357A89D00E41760 /* Products */;
-					ProjectRef = 04EF03892357A89D00E41760 /* RoomsFeatureData.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0445429E23539440007C4D31 /* RoomsFeature */,
@@ -361,16 +342,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		04EF038E2357A89E00E41760 /* libRoomsFeatureData.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRoomsFeatureData.a;
-			remoteRef = 04EF038D2357A89E00E41760 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0445429D23539440007C4D31 /* Resources */ = {
@@ -440,24 +411,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,10 +432,12 @@
 				044542F72355DDC2007C4D31 /* RoomDetailViewModel.swift in Sources */,
 				044542F32355C2A1007C4D31 /* DI.swift in Sources */,
 				044542D52354976D007C4D31 /* RoomTableViewCell.swift in Sources */,
+				04EC45D0260770B900000BBC /* RoomEntity.swift in Sources */,
 				044542F52355CA02007C4D31 /* Navigation.swift in Sources */,
 				04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */,
 				044542C423539679007C4D31 /* RoomDetailViewController.swift in Sources */,
 				049CCE5523662D4000B9EAED /* Room.swift in Sources */,
+				04EC45D1260770B900000BBC /* RoomsRepository.swift in Sources */,
 				044542DC2354D0C8007C4D31 /* View.swift in Sources */,
 				04EF03C12358D9FE00E41760 /* RoomCellViewModel.swift in Sources */,
 				044542BF2353963D007C4D31 /* RoomsListViewController.swift in Sources */,

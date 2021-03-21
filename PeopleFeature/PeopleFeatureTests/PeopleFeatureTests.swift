@@ -7,7 +7,6 @@
 //
 
 import XCTest
-import PeopleFeatureData
 import RxSwift
 import RxTest
 

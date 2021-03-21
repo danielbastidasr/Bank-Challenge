@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA0B2336B54EB8BC93E351065C37A948"
+               BlueprintIdentifier = "F79C428B96E3396061D0D9E6C43FA356"
                BuildableName = "Pods_RoomsFeature.framework"
                BlueprintName = "Pods-RoomsFeature"
                ReferencedContainer = "container:Pods.xcodeproj">
