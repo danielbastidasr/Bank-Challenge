@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+     runs-on: macos-latest
+
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v2
+    
+        - name: Install CocoaPods
+          run: |
+              sudo gem install cocoapods
+    
+        - name: Run pod install
+          run: |
+              pod install
+    
+        - name: Build and Test project
+          run: |
+            echo "Building"
+            xcodebuild -workspace ChallengeProject.xcworkspace \-scheme Bank\ Challenge \-destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO clean build test
