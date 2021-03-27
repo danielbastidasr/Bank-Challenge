@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "MunroFilterFeature",
+        "repositoryURL": "https://github.com/danielbastidasr/MunroSwiftUIFeature",
+        "state": {
+          "branch": "master",
+          "revision": "48acbea02b103a6248242d0fc7e79df9cbd69b4b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
