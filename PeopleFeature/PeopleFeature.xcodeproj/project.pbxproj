@@ -18,6 +18,7 @@
 		044542FF235604DA007C4D31 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044542FE235604DA007C4D31 /* DI.swift */; };
 		0445430323560BA9007C4D31 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430223560BA9007C4D31 /* PersonDetailViewModel.swift */; };
 		0445430523560CA4007C4D31 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445430423560CA4007C4D31 /* PeopleViewModel.swift */; };
+		047ACB12FFEBA0A07EE6EF28 /* Pods_PeopleFeatureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC023177BA577657390AEDE9 /* Pods_PeopleFeatureTests.framework */; };
 		049CCE4D2366282300B9EAED /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE4C2366282300B9EAED /* Person.swift */; };
 		049CCE4F23662A4F00B9EAED /* EntitiesExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049CCE4E23662A4F00B9EAED /* EntitiesExt.swift */; };
 		04EC45F12607731800000BBC /* PersonEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EC45EF2607731800000BBC /* PersonEntity.swift */; };
@@ -25,7 +26,6 @@
 		04EF03BC2358AE0500E41760 /* GetPeopleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */; };
 		04EF03BF2358AE9200E41760 /* GetPersonImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */; };
 		04EF03C52359082600E41760 /* PersonCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03C42359082600E41760 /* PersonCellViewModel.swift */; };
-		697FF10FEB73392CD5068733 /* Pods_PeopleFeatureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E44A03C57D807DDD0C7C58A8 /* Pods_PeopleFeatureTests.framework */; };
 		91D70F16CFA2FB006D38FCDC /* Pods_PeopleFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,12 +61,12 @@
 		04EF03BB2358AE0500E41760 /* GetPeopleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPeopleUseCase.swift; path = PeopleFeature/domain/GetPeopleUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03BE2358AE9200E41760 /* GetPersonImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPersonImageUseCase.swift; path = PeopleFeature/domain/GetPersonImageUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03C42359082600E41760 /* PersonCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCellViewModel.swift; sourceTree = "<group>"; };
-		14BA470BE573BDF0326E7B0A /* Pods-PeopleFeatureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeatureTests.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.release.xcconfig"; sourceTree = "<group>"; };
 		52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCFC815F361BE658F2E0977 /* Pods-PeopleFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeature.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeature/Pods-PeopleFeature.debug.xcconfig"; sourceTree = "<group>"; };
-		CC9F7D3B184F583FB8A7FD3D /* Pods-PeopleFeatureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeatureTests.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests.release.xcconfig"; sourceTree = "<group>"; };
-		E44A03C57D807DDD0C7C58A8 /* Pods_PeopleFeatureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeatureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88B32DF9D05E3CA330453AC /* Pods-PeopleFeatureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeatureTests.debug.xcconfig"; path = "Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DC023177BA577657390AEDE9 /* Pods_PeopleFeatureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PeopleFeatureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E936C83AA4CCB38BD7CE69B2 /* Pods-PeopleFeatureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PeopleFeatureTests.release.xcconfig"; path = "Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044542812353936C007C4D31 /* PeopleFeature.framework in Frameworks */,
-				697FF10FEB73392CD5068733 /* Pods_PeopleFeatureTests.framework in Frameworks */,
+				047ACB12FFEBA0A07EE6EF28 /* Pods_PeopleFeatureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +220,8 @@
 			children = (
 				BDCFC815F361BE658F2E0977 /* Pods-PeopleFeature.debug.xcconfig */,
 				3289A88241BA1767D14879B1 /* Pods-PeopleFeature.release.xcconfig */,
-				14BA470BE573BDF0326E7B0A /* Pods-PeopleFeatureTests.debug.xcconfig */,
-				CC9F7D3B184F583FB8A7FD3D /* Pods-PeopleFeatureTests.release.xcconfig */,
+				C88B32DF9D05E3CA330453AC /* Pods-PeopleFeatureTests.debug.xcconfig */,
+				E936C83AA4CCB38BD7CE69B2 /* Pods-PeopleFeatureTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -231,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				52D7ABA3CC8BB2E568B7A5AB /* Pods_PeopleFeature.framework */,
-				E44A03C57D807DDD0C7C58A8 /* Pods_PeopleFeatureTests.framework */,
+				DC023177BA577657390AEDE9 /* Pods_PeopleFeatureTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -273,11 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0445428E2353936C007C4D31 /* Build configuration list for PBXNativeTarget "PeopleFeatureTests" */;
 			buildPhases = (
-				9D71A460D0FB30A5C927E7F0 /* [CP] Check Pods Manifest.lock */,
+				99FB0316E221B6DC82515B5B /* [CP] Check Pods Manifest.lock */,
 				0445427C2353936C007C4D31 /* Sources */,
 				0445427D2353936C007C4D31 /* Frameworks */,
 				0445427E2353936C007C4D31 /* Resources */,
-				3269CEB6E17403C45841D311 /* [CP] Embed Pods Frameworks */,
+				3C2CB1432E6E9D37B84AAFF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -345,7 +345,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3269CEB6E17403C45841D311 /* [CP] Embed Pods Frameworks */ = {
+		3C2CB1432E6E9D37B84AAFF8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,7 +362,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PeopleFeatureTests/Pods-PeopleFeatureTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D71A460D0FB30A5C927E7F0 /* [CP] Check Pods Manifest.lock */ = {
+		99FB0316E221B6DC82515B5B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -627,7 +627,7 @@
 		};
 		0445428F2353936C007C4D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14BA470BE573BDF0326E7B0A /* Pods-PeopleFeatureTests.debug.xcconfig */;
+			baseConfigurationReference = C88B32DF9D05E3CA330453AC /* Pods-PeopleFeatureTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -647,7 +647,7 @@
 		};
 		044542902353936C007C4D31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC9F7D3B184F583FB8A7FD3D /* Pods-PeopleFeatureTests.release.xcconfig */;
+			baseConfigurationReference = E936C83AA4CCB38BD7CE69B2 /* Pods-PeopleFeatureTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

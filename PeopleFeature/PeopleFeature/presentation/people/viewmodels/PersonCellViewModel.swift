@@ -9,11 +9,20 @@
 import Foundation
 import RxSwift
 
-struct  PersonCellViewModel {
+struct  PersonCellViewModel: Equatable {
+    static func == (lhs: PersonCellViewModel, rhs: PersonCellViewModel) -> Bool {
+        lhs.person == rhs.person 
+    }
+    
     //Out
     let fullName:String
     let jobTitle:String
-    let image:PublishSubject<UIImage> = PublishSubject()
+    var image:Observable<UIImage> {
+        getPersonImage.getPersonImageResult(imageUrl: imageUrl)
+            .catchError { _ in
+                .just(UIImage())
+            }
+    }
     
     private let person: Person
     private let imageUrl: String
@@ -30,15 +39,6 @@ struct  PersonCellViewModel {
     
     func getPerson() -> Person {
         return person
-    }
-    
-    func getImage() {
-        getPersonImage.getPersonImageResult(imageUrl: imageUrl)
-        .subscribe(onNext: { image in
-            self.image.onNext(image)
-        }, onError: { error in
-            self.image.onNext(UIImage())
-        }).disposed(by: disposable)
     }
 }
 

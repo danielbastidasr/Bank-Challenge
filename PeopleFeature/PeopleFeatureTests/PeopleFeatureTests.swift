@@ -8,118 +8,115 @@
 
 import XCTest
 import RxSwift
-import RxTest
 
 @testable import PeopleFeature
 
 class PeopleFeatureTests: XCTestCase {
     
-    var disposableBag = DisposeBag()
-    var testScheduler = TestScheduler(initialClock: 0)
-    lazy var testObserver = testScheduler.createObserver(ViewState<[PersonCellViewModel]>.self)
-    
-    
-    //MARK:- TEST VIEW MODEL WITH SUCCESS DATA
-    func testViewModelWithElements() {
-        
-        let testInput = [
-           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
-           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color"),
-           PersonEntity(id: "", firstName: "Name", lastName: "LastName", avatar: "url", jobTitle: "job", email: "email", phone: "phone", favouriteColor: "color")
-        ]
+    func testFetchData_withSuccessResponse_ShouldGetStateWithData() {
         
         // GIVEN DATA SUCCESS
-        let getPeopleUseCase = MockPeopleUseCaseSuccess(testInput: testInput)
-        let getImageUseCase = MockGetImageSuccess()
-        let peopleViewModel = PeopleViewModel(getPeopleUseCase: getPeopleUseCase, getPersonImageUseCase: getImageUseCase)
+        let sut = makeSUT(with: .success)
+        let spy = RxSpy(value: sut.state)
         
         // WHEN CALL FETCH DATA
-        peopleViewModel.state
-            .subscribe(testObserver)
-            .disposed(by: disposableBag)
+        sut.fetchData()
         
-        peopleViewModel.fetchData()
+        // THEN View State
+        let viewModel = MockPeopleUseCaseSuccess.testInput.map { entity in
+            PersonCellViewModel(person: entity.toPresentation(), getPersonImage: MockGetImageSuccess())
+        }
         
-        // THEN 2 EVENTS TRIGGERED
-        XCTAssertEqual(testObserver.events.count, 2)
-        
-        // FIRST EVENT DISPLAY LOADING
-        let outputLoading = testObserver.events[0].value.element!
-        XCTAssert(outputLoading.isLoading)
-        
-        // SECOND EVENT DISPLAY DATA FETCHED
-        let outputData = testObserver.events[1].value.element!
-        XCTAssert(!outputData.isLoading)
-        XCTAssertEqual(outputData.data.count, testInput.count)
+        XCTAssertEqual(spy.stateList, [.success(.init(isLoading: true, isError: false, data: [])),
+                                       .success(.init(isLoading: false, isError: false, data: viewModel))
+                                      ]
+        )
     }
     
-    //MARK:- TEST VIEW MODEL WITH ERROR DATA
-    func testViewModelWithError() {
+    
+    func testFetchData_withErrorResponse_ShouldGetStateWithError() {
         
-        // GIVEN DATA WITH ERROR
-        let error = ErrorBag.testingError
-        let getPeopleUseCase = MockPeopleUseCaseError(error: error)
-        let getImageUseCase = MockGetImageSuccess()
-        let peopleViewModel = PeopleViewModel(getPeopleUseCase: getPeopleUseCase, getPersonImageUseCase: getImageUseCase)
+        // GIVEN DATA with error
+        let sut = makeSUT(with: .error)
+        let spy = RxSpy(value: sut.state)
         
-        // WHEN CALL FETCH DATA
-        peopleViewModel.state
-            .subscribe(testObserver)
-            .disposed(by: disposableBag)
+        // WHEN call fetch data
+        sut.fetchData()
         
-        peopleViewModel.fetchData()
-       
-        // THEN 2 EVENTS TRIGGERED
-        XCTAssertEqual(testObserver.events.count, 2)
-
-        // FIRST EVENT DISPLAY LOADING
-        let outputLoading = testObserver.events[0].value.element!
-        XCTAssert(outputLoading.isLoading)
-
-        // SECOND EVENT DISPLAY DATA FETCHED
-        let outputData = testObserver.events[1].value.element!
-        XCTAssert(!outputData.isLoading)
-        XCTAssert(outputData.isError)
+        // THEN View State
+        XCTAssertEqual(spy.stateList, [.success(.init(isLoading: true, isError: false, data: [])),
+                                       .success(.init(isLoading: false, isError: true, data: []))
+                                      ]
+        )
     }
-
-}
-
-
-// MARK:- MOCK CLASSES
-
-enum ErrorBag:Error {
-    case testingError
-}
-
-extension ErrorBag: LocalizedError {
-    public var errorDescription: String? {
-        switch self {
-        case .testingError:
-            return NSLocalizedString("ERROR IN TEST", comment: "TestError")
+    
+    // MARK:- Utils
+    private func makeSUT(with type: SUTType) ->  PeopleViewModel {
+        let getPeopleUseCase: GetPeopleUseCaseProtocol
+        
+        switch type {
+        case .success:
+            getPeopleUseCase = MockPeopleUseCaseSuccess()
+        case .error:
+            getPeopleUseCase = MockPeopleUseCaseError()
+        }
+        
+        let sut = PeopleViewModel(getPeopleUseCase: getPeopleUseCase, getPersonImageUseCase: MockGetImageSuccess())
+        return sut
+    }
+    
+    enum SUTType {
+        case success
+        case error
+    }
+    
+    class RxSpy<T> {
+        let disposeBag = DisposeBag()
+        var stateList: [Result<T, MyError>] = []
+        let value: Observable<T>
+        
+        init(value: Observable<T>) {
+            self.value = value
+            
+            self.value.subscribe (
+                onNext: { [weak self] state in
+                    self?.stateList.append(.success(state))
+                }, onError: { [weak self] _ in
+                    self?.stateList.append(.failure(MyError()))
+                }
+            ).disposed(by: disposeBag)
         }
     }
-}
-
-struct MockPeopleUseCaseSuccess: GetPeopleUseCaseProtocol {
     
-    let testInput: [PersonEntity]
+    struct MyError: Error, Equatable {}
     
-    func getPeopleResult() -> Observable<[PersonEntity]> {
-        return Observable.just(testInput)
+    struct MockPeopleUseCaseSuccess: GetPeopleUseCaseProtocol {
+        
+        static let testInput: [PersonEntity] = [
+            PersonEntity(id: UUID().uuidString, firstName: "Name1", lastName: "LastName1", avatar: "url1", jobTitle: "job1", email: "email", phone: "phone", favouriteColor: "color"),
+            PersonEntity(id: UUID().uuidString, firstName: "Name2", lastName: "LastName2", avatar: "url2", jobTitle: "job2", email: "email", phone: "phone", favouriteColor: "color"),
+            PersonEntity(id: UUID().uuidString, firstName: "Name3", lastName: "LastName3", avatar: "url3", jobTitle: "job3", email: "email", phone: "phone", favouriteColor: "color"),
+            PersonEntity(id: UUID().uuidString, firstName: "Name4", lastName: "LastName4", avatar: "url4", jobTitle: "job4", email: "email", phone: "phone", favouriteColor: "color")
+         ]
+        
+        func getPeopleResult() -> Observable<[PersonEntity]> {
+            return Observable.just(PeopleFeatureTests.MockPeopleUseCaseSuccess.testInput)
+        }
     }
-}
 
-struct MockPeopleUseCaseError: GetPeopleUseCaseProtocol {
-    
-    let error: Error
-    
-    func getPeopleResult() -> Observable<[PersonEntity]> {
-        return Observable.error(error)
+    struct MockPeopleUseCaseError: GetPeopleUseCaseProtocol {
+        
+        private let error: Error = NSError()
+        
+        func getPeopleResult() -> Observable<[PersonEntity]> {
+            return Observable.error(error)
+        }
     }
-}
 
-struct MockGetImageSuccess: GetPersonImageUseCaseProtocol {
-    func getPersonImageResult(imageUrl: String) -> Observable<UIImage> {
-        return Observable.just(UIImage())
+    struct MockGetImageSuccess: GetPersonImageUseCaseProtocol {
+        func getPersonImageResult(imageUrl: String) -> Observable<UIImage> {
+            return Observable.just(UIImage())
+        }
     }
+
 }

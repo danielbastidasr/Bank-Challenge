@@ -145,7 +145,7 @@ class BaseViewController : UIViewController {
 
 typealias View = BaseViewController & ViewProtocol
 
-class ViewModelProtocol<T> {
+class ViewModelProtocol<T: Equatable> {
     
     //OUT
     let state:PublishSubject<ViewState<T>> = PublishSubject()
@@ -170,7 +170,7 @@ class ViewModelProtocol<T> {
     }
 }
 
-struct ViewState<T>{
+struct ViewState<T>: Equatable where T: Equatable {
     var isLoading: Bool
     var isError: Bool
     var data: T

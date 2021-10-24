@@ -16,7 +16,6 @@ target 'RoomsFeature' do
   target 'RoomsFeatureTests' do
     inherit! :search_paths
     core_pods
-    pod 'RxTest'
   end
   
 end
@@ -28,7 +27,6 @@ target 'PeopleFeature' do
   target 'PeopleFeatureTests' do
     inherit! :search_paths
     core_pods
-    pod 'RxTest'
   end
   
 end

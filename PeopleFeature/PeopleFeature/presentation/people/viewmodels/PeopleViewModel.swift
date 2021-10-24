@@ -9,7 +9,9 @@
 import Foundation
 import RxSwift
 
-class PeopleViewModel:ViewModelProtocol<[PersonCellViewModel]> {
+typealias PeopleViewModelState = [PersonCellViewModel]
+
+class PeopleViewModel:ViewModelProtocol<PeopleViewModelState> {
     
     private let getPeopleUseCase:GetPeopleUseCaseProtocol
     private let getPersonImageUseCase: GetPersonImageUseCaseProtocol

@@ -24,8 +24,6 @@ class PersonTableViewCell: UITableViewCell {
                 .subscribeOn(MainScheduler.instance)
                 .bind(to: personImage.rx.image)
             .disposed(by: disposableBag)
-        
-            personCellViewModel?.getImage()
         }
      }
     

@@ -26,7 +26,7 @@
 		04EF03B52358871100E41760 /* GetRoomsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03B42358871100E41760 /* GetRoomsUseCase.swift */; };
 		04EF03C12358D9FE00E41760 /* RoomCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */; };
 		23EFF3A4F16426888595C8EE /* Pods_RoomsFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */; };
-		FDC480AEB259D2064EBB5035 /* Pods_RoomsFeatureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C99177016D8822BB71C7A5D /* Pods_RoomsFeatureTests.framework */; };
+		9125BDFD74A0C6E6DB0AE7FC /* Pods_RoomsFeatureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2422EF840C36A2836335BB05 /* Pods_RoomsFeatureTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +61,12 @@
 		04EC45CF260770B900000BBC /* RoomsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoomsRepository.swift; path = RoomsFeature/data/RoomsRepository.swift; sourceTree = SOURCE_ROOT; };
 		04EF03B42358871100E41760 /* GetRoomsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetRoomsUseCase.swift; path = RoomsFeature/domain/GetRoomsUseCase.swift; sourceTree = SOURCE_ROOT; };
 		04EF03C02358D9FE00E41760 /* RoomCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCellViewModel.swift; sourceTree = "<group>"; };
-		4C99177016D8822BB71C7A5D /* Pods_RoomsFeatureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeatureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2422EF840C36A2836335BB05 /* Pods_RoomsFeatureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeatureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RoomsFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6268664B542D8239A62C450E /* Pods-RoomsFeature.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeature.debug.xcconfig"; path = "Target Support Files/Pods-RoomsFeature/Pods-RoomsFeature.debug.xcconfig"; sourceTree = "<group>"; };
-		7D34157B057BDF55D249A6B3 /* Pods-RoomsFeatureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeatureTests.debug.xcconfig"; path = "Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests.debug.xcconfig"; sourceTree = "<group>"; };
+		718662CF7375A2B4BEBB952B /* Pods-RoomsFeatureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeatureTests.release.xcconfig"; path = "Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests.release.xcconfig"; sourceTree = "<group>"; };
 		94F788534C913218E54B8221 /* Pods-RoomsFeature.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeature.release.xcconfig"; path = "Target Support Files/Pods-RoomsFeature/Pods-RoomsFeature.release.xcconfig"; sourceTree = "<group>"; };
-		C015BCB9DD3922CAAD092812 /* Pods-RoomsFeatureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeatureTests.release.xcconfig"; path = "Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests.release.xcconfig"; sourceTree = "<group>"; };
+		AA0B551F359C81009F14BC0A /* Pods-RoomsFeatureTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomsFeatureTests.debug.xcconfig"; path = "Target Support Files/Pods-RoomsFeatureTests/Pods-RoomsFeatureTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044542A923539440007C4D31 /* RoomsFeature.framework in Frameworks */,
-				FDC480AEB259D2064EBB5035 /* Pods_RoomsFeatureTests.framework in Frameworks */,
+				9125BDFD74A0C6E6DB0AE7FC /* Pods_RoomsFeatureTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +236,8 @@
 			children = (
 				6268664B542D8239A62C450E /* Pods-RoomsFeature.debug.xcconfig */,
 				94F788534C913218E54B8221 /* Pods-RoomsFeature.release.xcconfig */,
-				7D34157B057BDF55D249A6B3 /* Pods-RoomsFeatureTests.debug.xcconfig */,
-				C015BCB9DD3922CAAD092812 /* Pods-RoomsFeatureTests.release.xcconfig */,
+				AA0B551F359C81009F14BC0A /* Pods-RoomsFeatureTests.debug.xcconfig */,
+				718662CF7375A2B4BEBB952B /* Pods-RoomsFeatureTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -247,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				61A0E74E28EE2DAECD3E2507 /* Pods_RoomsFeature.framework */,
-				4C99177016D8822BB71C7A5D /* Pods_RoomsFeatureTests.framework */,
+				2422EF840C36A2836335BB05 /* Pods_RoomsFeatureTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -289,11 +289,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044542B623539440007C4D31 /* Build configuration list for PBXNativeTarget "RoomsFeatureTests" */;
 			buildPhases = (
-				60DACFAD5DAEBF81609DDB83 /* [CP] Check Pods Manifest.lock */,
+				C52C8B8A38D4334C5C0E5661 /* [CP] Check Pods Manifest.lock */,
 				044542A423539440007C4D31 /* Sources */,
 				044542A523539440007C4D31 /* Frameworks */,
 				044542A623539440007C4D31 /* Resources */,
-				A167DEA5921668C8DE3710DF /* [CP] Embed Pods Frameworks */,
+				F3552F22124C6D63AF9F0B61 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -361,28 +361,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		60DACFAD5DAEBF81609DDB83 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RoomsFeatureTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		79B68EE55178BFE306E4070C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -405,7 +383,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A167DEA5921668C8DE3710DF /* [CP] Embed Pods Frameworks */ = {
+		C52C8B8A38D4334C5C0E5661 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RoomsFeatureTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3552F22124C6D63AF9F0B61 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -643,7 +643,7 @@
 		};
 		044542B723539440007C4D31 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D34157B057BDF55D249A6B3 /* Pods-RoomsFeatureTests.debug.xcconfig */;
+			baseConfigurationReference = AA0B551F359C81009F14BC0A /* Pods-RoomsFeatureTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -663,7 +663,7 @@
 		};
 		044542B823539440007C4D31 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C015BCB9DD3922CAAD092812 /* Pods-RoomsFeatureTests.release.xcconfig */;
+			baseConfigurationReference = 718662CF7375A2B4BEBB952B /* Pods-RoomsFeatureTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

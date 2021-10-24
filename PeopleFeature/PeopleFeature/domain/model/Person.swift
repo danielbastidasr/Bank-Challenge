@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Person {
+public struct Person: Equatable {
     let id:String
     let firstName:String
     let lastName:String
